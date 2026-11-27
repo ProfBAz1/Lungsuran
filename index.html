@@ -1,0 +1,2373 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Lungsuran - Katalog C2C terpercaya untuk transaksi barang preloved dan handmade skala kecil di sekitar Anda dengan verifikasi foto asli tanpa filter dan COD aman berbasis OTP Escrow.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';">
+  <title>Lungsuran — Preloved & Handmade Lokal Terpercaya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-cream: #FAF7F2;
+      --surface-white: #FFFFFF;
+      --terracotta: #C2410C;
+      --terracotta-hover: #9A3412;
+      --amber-accent: #D97706;
+      --sage-green: #15803D;
+      --ink-dark: #1C1917;
+      --ink-muted: #57534E;
+      --border-sand: #E7E0D5;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-cream);
+      color: var(--ink-dark);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F3EDE2;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D6CBB9;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C2410C;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-up {
+      animation: fadeSlideUp 0.26s ease-out forwards;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(1.22); }
+    }
+
+    .live-dot {
+      animation: pulseDot 2s infinite;
+    }
+
+    input[type="range"].warm-range {
+      -webkit-appearance: none;
+      appearance: none;
+      background: #E7E0D5;
+      height: 8px;
+      border-radius: 999px;
+      outline: none;
+    }
+    input[type="range"].warm-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #C2410C;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 2px 6px rgba(194, 65, 12, 0.35);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-24 lg:pb-12 selection:bg-orange-200 selection:text-orange-950">
+
+  <!-- ===================================================================== -->
+  <!-- TOP NAVIGATION BAR RESPONSIF (DESKTOP & MOBILE HEADER)                -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E7E0D5]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+      <!-- Brand Logo -->
+      <button type="button" data-nav-view="catalog" class="nav-link-trigger flex items-center gap-2.5 text-left focus:outline-none group shrink-0">
+        <div class="w-10 h-10 rounded-2xl bg-[#C2410C] flex items-center justify-center text-white shadow-xs group-hover:bg-[#9A3412] transition-colors">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+          </svg>
+        </div>
+        <div>
+          <span class="block text-lg font-extrabold tracking-tight text-[#1C1917] leading-none">Lungsuran</span>
+          <span class="block text-[11px] font-semibold text-[#57534E] mt-0.5">Preloved & Handmade Lokal</span>
+        </div>
+      </button>
+
+      <!-- Menu Navigasi Utama Desktop -->
+      <nav aria-label="Menu Utama" class="hidden lg:flex items-center gap-1 bg-white/80 p-1 rounded-2xl border border-[#E7E0D5]">
+        <button type="button" data-nav-view="catalog" class="main-nav-btn px-3.5 py-2 rounded-xl text-xs font-extrabold bg-[#1C1917] text-white transition-colors">
+          Katalog Barang
+        </button>
+        <button type="button" data-nav-view="about" class="main-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold text-[#57534E] hover:text-[#1C1917] transition-colors">
+          Tentang Kami
+        </button>
+        <button type="button" data-nav-view="guide" class="main-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold text-[#57534E] hover:text-[#1C1917] transition-colors">
+          Panduan Aman
+        </button>
+        <button type="button" data-nav-view="help" class="main-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold text-[#57534E] hover:text-[#1C1917] transition-colors">
+          Pusat Bantuan
+        </button>
+      </nav>
+
+      <!-- Desktop Action Buttons -->
+      <div class="hidden sm:flex items-center gap-2">
+        <button type="button" id="btn-open-transactions" class="px-3.5 py-2.5 rounded-2xl text-xs font-extrabold bg-white border border-[#E7E0D5] text-[#1C1917] hover:border-[#15803D] transition-colors flex items-center gap-2">
+          <svg class="w-4 h-4 text-[#15803D]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
+          </svg>
+          <span>COD & OTP</span>
+          <span id="badge-tx-desktop" class="px-2 py-0.5 text-[11px] font-extrabold bg-green-100 text-[#15803D] rounded-full">1</span>
+        </button>
+
+        <button type="button" id="btn-open-sell-desktop" class="px-4 py-2.5 rounded-2xl text-xs font-extrabold bg-[#C2410C] hover:bg-[#9A3412] text-white shadow-xs transition-all flex items-center gap-1.5">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>Pasang Lungsuran</span>
+        </button>
+      </div>
+
+      <!-- Mobile Quick Radius & Menu Button -->
+      <div class="flex sm:hidden items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-2xl bg-white border border-[#E7E0D5] text-[11px] font-bold text-[#1C1917]">
+          <span class="w-2 h-2 rounded-full bg-[#15803D] live-dot"></span>
+          <span id="mobile-header-radius">≤ 5 km</span>
+        </span>
+        <button type="button" id="btn-open-sell-mobile-top" class="px-3 py-1.5 rounded-2xl bg-[#C2410C] text-white text-xs font-extrabold">
+          + Pasang
+        </button>
+      </div>
+    </div>
+
+    <!-- Sub-Navigation Bar untuk Layar Tablet/Mobile (Akses Cepat 4 Halaman Utama) -->
+    <div class="lg:hidden border-t border-[#E7E0D5]/80 bg-[#FAF7F2] px-4 py-2 overflow-x-auto no-scrollbar">
+      <div class="flex items-center gap-1.5 min-w-max">
+        <button type="button" data-nav-view="catalog" class="main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-extrabold bg-[#1C1917] text-white">
+          Katalog Barang
+        </button>
+        <button type="button" data-nav-view="about" class="main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E]">
+          Tentang Kami
+        </button>
+        <button type="button" data-nav-view="guide" class="main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E]">
+          Panduan Aman
+        </button>
+        <button type="button" data-nav-view="help" class="main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E]">
+          Pusat Bantuan / Help
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 1: HALAMAN KATALOG BARANG (BERANDA INTERAKTIF)                   -->
+  <!-- ===================================================================== -->
+  <main id="view-catalog" class="app-view max-w-6xl mx-auto px-4 sm:px-6 pt-5 space-y-5">
+
+    <!-- BANNER INFORMASI SINGKAT TUJUAN & MANFAAT LUNGSURAN -->
+    <section aria-label="Informasi Singkat Lungsuran" class="bg-gradient-to-r from-[#FFF7ED] via-white to-[#F0FDF4] rounded-2xl border border-[#E7E0D5] p-4 sm:p-5 shadow-2xs">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="space-y-1.5 max-w-2xl">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-xl bg-[#C2410C]/10 text-[#C2410C] text-[11px] font-extrabold uppercase tracking-wider">
+              Ekonomi Sirkular & Kriya Tetangga
+            </span>
+            <span class="px-2.5 py-0.5 rounded-xl bg-green-100 text-[#15803D] text-[11px] font-bold">
+              100% Real Pict • COD OTP Escrow
+            </span>
+          </div>
+          <h1 class="text-lg sm:text-xl font-extrabold text-[#1C1917] leading-snug">
+            Beri Nyawa Kedua untuk Barang Terawat & Dukung Karya Handmade Sekitar
+          </h1>
+          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+            <strong>Tujuan & Manfaat:</strong> Mengurangi limbah barang layak pakai, menghemat pengeluaran lewat sistem tawar & barter transparan, serta memudahkan transaksi tatap muka aman tanpa ongkos kirim mahal.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0">
+          <button type="button" data-nav-view="guide" class="nav-link-trigger px-3.5 py-2.5 rounded-2xl bg-white border border-[#E7E0D5] hover:border-[#C2410C] text-xs font-extrabold text-[#1C1917] transition-colors">
+            Cara Kerja COD OTP
+          </button>
+          <button type="button" data-nav-view="about" class="nav-link-trigger px-3.5 py-2.5 rounded-2xl bg-[#1C1917] hover:bg-stone-800 text-white text-xs font-extrabold transition-colors">
+            Tentang Lungsuran →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL FILTER RADIUS TERDEKAT (HYPERLOCAL) & PENCARIAN -->
+    <section aria-label="Filter Radius Terdekat dan Pencarian" class="bg-white rounded-2xl border border-[#E7E0D5] p-4 sm:p-5 shadow-2xs space-y-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+        <!-- Pencarian Kata Kunci -->
+        <div class="lg:col-span-5">
+          <label for="search-input" class="block text-xs font-extrabold text-[#1C1917] mb-1.5">
+            Cari Barang Preloved atau Handmade
+          </label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-3.5 flex items-center text-[#78716C]">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input id="search-input" type="search" maxlength="60" placeholder="Ketik kamera, keramik, jaket, lokasi..." class="w-full pl-10 pr-4 py-2.5 bg-[#FAF7F2] border border-[#E7E0D5] rounded-2xl text-sm text-[#1C1917] placeholder-[#78716C] focus:outline-none focus:border-[#C2410C] focus:bg-white transition-all">
+          </div>
+        </div>
+
+        <!-- Kontrol Slider & Tombol Cepat Radius Kilometer -->
+        <div class="lg:col-span-7 bg-[#FAF7F2] rounded-2xl border border-[#E7E0D5] p-3.5">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-1.5 text-xs font-extrabold text-[#1C1917]">
+              <svg class="w-4 h-4 text-[#C2410C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Filter Radius Terdekat (Hyperlocal)</span>
+            </div>
+            <span id="radius-value-badge" class="px-2.5 py-1 rounded-xl bg-[#C2410C] text-white text-xs font-extrabold">
+              Maks 5 km
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
+            <div class="sm:col-span-6">
+              <input id="radius-slider" type="range" min="1" max="15" step="1" value="5" aria-label="Geser batas radius kilometer" class="w-full warm-range">
+              <div class="flex justify-between text-[10px] font-bold text-[#78716C] mt-1">
+                <span>1 km</span>
+                <span>3 km</span>
+                <span>5 km</span>
+                <span>10 km</span>
+                <span>Semua</span>
+              </div>
+            </div>
+
+            <div class="sm:col-span-6 flex flex-wrap gap-1.5 sm:justify-end">
+              <button type="button" data-radius="1" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors">1 km</button>
+              <button type="button" data-radius="3" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors">3 km</button>
+              <button type="button" data-radius="5" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-[#C2410C] border border-[#C2410C] text-white transition-colors">5 km</button>
+              <button type="button" data-radius="10" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors">10 km</button>
+              <button type="button" data-radius="15" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors">Semua</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bar Kategori, Filter Barter & Urutan -->
+      <div class="pt-3 border-t border-[#F3EDE2] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0">
+          <button type="button" data-cat="all" class="cat-tab px-3.5 py-2 rounded-2xl text-xs font-extrabold bg-[#1C1917] text-white shrink-0 transition-colors">
+            Semua Kategori
+          </button>
+          <button type="button" data-cat="Preloved" class="cat-tab px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] shrink-0 transition-colors">
+            Preloved
+          </button>
+          <button type="button" data-cat="Handmade" class="cat-tab px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] shrink-0 transition-colors">
+            Handmade
+          </button>
+          <button type="button" id="toggle-barter-only" class="px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#D97706] shrink-0 transition-colors flex items-center gap-1.5">
+            <span class="text-[#D97706] font-black">⇄</span>
+            <span>Bisa Barter</span>
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between sm:justify-end gap-3">
+          <span id="catalog-count-label" class="text-xs font-bold text-[#57534E]">Menampilkan 6 barang</span>
+          <select id="sort-select" aria-label="Urutkan katalog" class="px-3 py-2 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs font-bold text-[#1C1917] focus:outline-none focus:border-[#C2410C]">
+            <option value="nearest">Urut: Terdekat (km)</option>
+            <option value="cheapest">Urut: Harga Termurah</option>
+            <option value="condition">Urut: Kondisi Tertinggi (%)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID KATALOG PRODUK -->
+    <section aria-label="Daftar Produk">
+      <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Kartu produk di-render 100% aman via document.createElement & textContent -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="catalog-empty" class="hidden bg-white rounded-2xl border border-[#E7E0D5] p-10 text-center">
+        <div class="w-14 h-14 rounded-2xl bg-orange-50 text-[#C2410C] flex items-center justify-center mx-auto mb-3 font-extrabold text-xl">
+          ?
+        </div>
+        <h2 class="text-base font-extrabold text-[#1C1917]">Tidak ada barang ditemukan pada radius ini</h2>
+        <p class="text-xs sm:text-sm text-[#57534E] max-w-md mx-auto mt-1">
+          Perlebar jarak radius kilometer atau atur ulang kata kunci pencarian untuk melihat barang dari lingkungan sekitar.
+        </p>
+        <button type="button" id="btn-reset-filters" class="mt-4 px-5 py-2.5 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-white text-xs font-extrabold transition-colors">
+          Tampilkan Semua Jarak (15 km)
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 2: HALAMAN TENTANG KAMI (TUJUAN, EKONOMI SIRKULAR & NILAI)       -->
+  <!-- ===================================================================== -->
+  <section id="view-about" class="app-view hidden max-w-5xl mx-auto px-4 sm:px-6 pt-6 space-y-6 animate-fade-up">
+    <div class="bg-white rounded-2xl border border-[#E7E0D5] p-6 sm:p-8 shadow-2xs space-y-4">
+      <span class="inline-block px-3 py-1 rounded-xl bg-orange-100 text-[#C2410C] text-xs font-extrabold">
+        Tentang Lungsuran
+      </span>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-[#1C1917] leading-tight">
+        Menghubungkan Warga Lokal Lewat Barang Bermakna & Kejujuran Kondisi
+      </h1>
+      <p class="text-sm sm:text-base text-[#57534E] leading-relaxed">
+        <strong>Lungsuran</strong> lahir dari kebiasaan baik masyarakat Indonesia mewariskan barang layak pakai kepada kerabat atau tetangga terdekat. Kami membangun ruang transaksi Consumer-to-Consumer (C2C) hiper-lokal agar barang preloved berkualitas tidak menumpuk menjadi limbah, sekaligus memberi panggung bagi perajin handmade skala rumahan.
+      </p>
+    </div>
+
+    <!-- 3 Pilar Manfaat Utama -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <article class="bg-white rounded-2xl border border-[#E7E0D5] p-5 space-y-2.5">
+        <div class="w-10 h-10 rounded-2xl bg-green-100 text-[#15803D] flex items-center justify-center font-extrabold">
+          01
+        </div>
+        <h2 class="text-base font-extrabold text-[#1C1917]">Ekonomi Sirkular Hiper-Lokal</h2>
+        <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+          Memperpanjang usia pakai barang elektronik, buku, pakaian, hingga perabot rumah tangga dalam radius dekat (1–10 km) tanpa jejak karbon pengiriman jarak jauh.
+        </p>
+      </article>
+
+      <article class="bg-white rounded-2xl border border-[#E7E0D5] p-5 space-y-2.5">
+        <div class="w-10 h-10 rounded-2xl bg-amber-100 text-[#D97706] flex items-center justify-center font-extrabold">
+          02
+        </div>
+        <h2 class="text-base font-extrabold text-[#1C1917]">Dukungan Kreator Handmade</h2>
+        <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+          Membantu pengrajin keramik, rajutan, kayu, dan aksesori skala kecil memasarkan karya buatan tangan langsung ke pembeli di kota yang sama.
+        </p>
+      </article>
+
+      <article class="bg-white rounded-2xl border border-[#E7E0D5] p-5 space-y-2.5">
+        <div class="w-10 h-10 rounded-2xl bg-orange-100 text-[#C2410C] flex items-center justify-center font-extrabold">
+          03
+        </div>
+        <h2 class="text-base font-extrabold text-[#1C1917]">Nilai Transparansi Radikal</h2>
+        <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+          Penjual wajib mengisi persentase kondisi fisik, mengakui bagian minus secara jujur di awal, serta melampirkan foto asli kamera tanpa filter berlebihan.
+        </p>
+      </article>
+    </div>
+
+    <div class="bg-[#1C1917] text-white rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <h3 class="text-lg font-extrabold">Punya barang terawat atau karya handmade?</h3>
+        <p class="text-xs sm:text-sm text-stone-300 mt-1">Tayangkan gratis dan temukan pembeli atau rekan barter di sekitar Anda hari ini.</p>
+      </div>
+      <div class="flex gap-2.5 shrink-0">
+        <button type="button" data-nav-view="catalog" class="nav-link-trigger px-4 py-2.5 rounded-2xl bg-white/10 hover:bg-white/20 text-xs font-extrabold">
+          Jelajahi Katalog
+        </button>
+        <button type="button" id="btn-about-sell" class="px-4 py-2.5 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-xs font-extrabold">
+          + Pasang Lungsuran
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 3: HALAMAN PANDUAN AMAN (LANGKAH TRANSAKSI, FISIK & COD OTP)     -->
+  <!-- ===================================================================== -->
+  <section id="view-guide" class="app-view hidden max-w-5xl mx-auto px-4 sm:px-6 pt-6 space-y-6 animate-fade-up">
+    <div class="bg-white rounded-2xl border border-[#E7E0D5] p-6 sm:p-8 shadow-2xs">
+      <span class="inline-block px-3 py-1 rounded-xl bg-green-100 text-[#15803D] text-xs font-extrabold mb-2">
+        Panduan Keamanan Transaksi
+      </span>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-[#1C1917]">
+        4 Langkah Jual-Beli & Barter Aman di Lungsuran
+      </h1>
+      <p class="text-xs sm:text-sm text-[#57534E] mt-2">
+        Ikuti standar keselamatan komunitas agar setiap serah terima barang berjalan nyaman tanpa risiko penipuan.
+      </p>
+
+      <!-- 4 Step Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+        <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
+          <span class="text-xs font-extrabold text-[#C2410C]">LANGKAH 1</span>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Periksa Checklist & Foto Real Pict</h2>
+          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+            Baca persentase kondisi (misal 92% mulus) dan catatan minus jujur penjual sebelum menawar. Pastikan foto menampilkan detail fisik asli.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
+          <span class="text-xs font-extrabold text-[#D97706]">LANGKAH 2</span>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Negosiasi Harga atau Ajukan Barter</h2>
+          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+            Gunakan fitur chat bawaan untuk mengajukan tawaran harga wajar atau menukar dengan barang milik Anda (disertai foto & deskripsi kondisi).
+          </p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
+          <span class="text-xs font-extrabold text-[#15803D]">LANGKAH 3</span>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Pilih Titik Temu Publik (Safe Meetup)</h2>
+          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+            Selalu jadwalkan COD di area ramai ber-CCTV seperti minimarket (Indomaret/Alfamart), pos satpam kampus, atau taman kota pada siang/sore hari.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
+          <span class="text-xs font-extrabold text-[#15803D]">LANGKAH 4</span>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Cek Fisik & Konfirmasi 6-Digit OTP</h2>
+          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+            Uji fungsi barang saat bertemu. Jika sudah sesuai checklist, masukkan kode OTP 6-digit pada menu <strong>COD & OTP</strong> agar dana escrow cair ke penjual.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tips Cek Fisik Barang -->
+    <div class="bg-white rounded-2xl border border-[#E7E0D5] p-6 space-y-3">
+      <h2 class="text-lg font-extrabold text-[#1C1917]">Daftar Periksa Cepat Saat Bertemu COD</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-[#1C1917]">
+        <li class="p-3 rounded-2xl bg-green-50/70 border border-green-200 font-medium">✓ Cocokkan fisik barang dengan catatan minus penjual di aplikasi.</li>
+        <li class="p-3 rounded-2xl bg-green-50/70 border border-green-200 font-medium">✓ Tes tombol, baterai, resleting, atau kelengkapan sebelum input OTP.</li>
+        <li class="p-3 rounded-2xl bg-amber-50/70 border border-amber-200 font-medium">! Jangan pernah membagikan kode OTP lewat chat sebelum barang di tangan Anda.</li>
+        <li class="p-3 rounded-2xl bg-amber-50/70 border border-amber-200 font-medium">! Hindari lokasi pertemuan sepi atau transaksi di luar sistem escrow OTP.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 4: HALAMAN PUSAT BANTUAN / HELP (FAQ ACCORDION & FORM PENGADUAN) -->
+  <!-- ===================================================================== -->
+  <section id="view-help" class="app-view hidden max-w-5xl mx-auto px-4 sm:px-6 pt-6 space-y-6 animate-fade-up">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- Kolom Kiri: FAQ Interaktif Accordion -->
+      <div class="lg:col-span-7 bg-white rounded-2xl border border-[#E7E0D5] p-5 sm:p-6 space-y-4">
+        <div>
+          <span class="inline-block px-3 py-1 rounded-xl bg-amber-100 text-amber-900 text-xs font-extrabold mb-1.5">
+            Pusat Bantuan & FAQ
+          </span>
+          <h1 class="text-xl sm:text-2xl font-extrabold text-[#1C1917]">Pertanyaan yang Sering Diajukan</h1>
+        </div>
+
+        <div id="faq-accordion" class="space-y-2.5">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item rounded-2xl border border-[#E7E0D5] bg-[#FAF7F2] overflow-hidden">
+            <button type="button" class="faq-trigger w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-[#1C1917]">
+              <span>Bagaimana cara kerja sistem Escrow Kode OTP saat COD?</span>
+              <span class="faq-icon text-[#C2410C] font-black text-base">+</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-[#57534E] leading-relaxed border-t border-[#E7E0D5]/60 pt-2.5">
+              Saat jadwal COD dikunci, pembeli mendapat kode OTP 6-digit unik sementara dana ditahan aman di sistem escrow. Ketika bertemu di titik publik dan fisik barang sudah dicek sesuai deskripsi, pembeli mengonfirmasi kode OTP tersebut sehingga status berubah menjadi <strong>Dana Cair ke Penjual</strong>.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item rounded-2xl border border-[#E7E0D5] bg-[#FAF7F2] overflow-hidden">
+            <button type="button" class="faq-trigger w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-[#1C1917]">
+              <span>Apakah boleh barter barang ditambah uang tunai?</span>
+              <span class="faq-icon text-[#C2410C] font-black text-base">+</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-[#57534E] leading-relaxed border-t border-[#E7E0D5]/60 pt-2.5">
+              Bisa! Di dalam modal chat produk, pilih tab <strong>Ajukan Barter</strong>. Anda dapat menuliskan detail barang tukar beserta kondisi/foto real pict, lalu menambahkan nominal selisih tunai jika nilai barang berbeda.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item rounded-2xl border border-[#E7E0D5] bg-[#FAF7F2] overflow-hidden">
+            <button type="button" class="faq-trigger w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-[#1C1917]">
+              <span>Mengapa wajib mengisi catatan minus dan foto tanpa filter?</span>
+              <span class="faq-icon text-[#C2410C] font-black text-base">+</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-[#57534E] leading-relaxed border-t border-[#E7E0D5]/60 pt-2.5">
+              Untuk mencegah pembatalan sepihak saat bertemu COD. Kejujuran kondisi fisik sejak awal membuat pembeli dan penjual sama-sama hemat waktu dan saling percaya.
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item rounded-2xl border border-[#E7E0D5] bg-[#FAF7F2] overflow-hidden">
+            <button type="button" class="faq-trigger w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-[#1C1917]">
+              <span>Bagaimana jika barang tidak sesuai saat ketemuan COD?</span>
+              <span class="faq-icon text-[#C2410C] font-black text-base">+</span>
+            </button>
+            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-[#57534E] leading-relaxed border-t border-[#E7E0D5]/60 pt-2.5">
+              Jangan masukkan atau berikan kode OTP 6-digit Anda. Batalkan serah terima di lokasi publik tersebut dan laporkan detail transaksi melalui formulir bantuan di samping.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: Formulir Pengaduan / Bantuan Langsung -->
+      <div class="lg:col-span-5 bg-white rounded-2xl border border-[#E7E0D5] p-5 sm:p-6 space-y-4">
+        <div>
+          <h2 class="text-lg font-extrabold text-[#1C1917]">Minta Bantuan / Laporan Kendala</h2>
+          <p class="text-xs text-[#57534E] mt-0.5">Tim moderator komunitas siap membantu kendala COD, sengketa kondisi barang, atau saran fitur.</p>
+        </div>
+
+        <form id="form-help-ticket" class="space-y-3">
+          <div>
+            <label for="help-name" class="block text-xs font-extrabold text-[#1C1917] mb-1">Nama Lengkap *</label>
+            <input id="help-name" type="text" maxlength="60" required placeholder="Masukkan nama Anda" class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm">
+          </div>
+
+          <div>
+            <label for="help-topic" class="block text-xs font-extrabold text-[#1C1917] mb-1">Kategori Bantuan *</label>
+            <select id="help-topic" class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm font-semibold">
+              <option value="Kendala Jadwal COD / OTP">Kendala Jadwal COD / OTP</option>
+              <option value="Laporan Kondisi Barang Tidak Sesuai">Laporan Kondisi Barang Tidak Sesuai</option>
+              <option value="Pertanyaan Sistem Barter">Pertanyaan Sistem Barter</option>
+              <option value="Saran Pengembangan Lungsuran">Saran Pengembangan Lungsuran</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="help-tx-id" class="block text-xs font-extrabold text-[#1C1917] mb-1">ID Transaksi COD (Opsional)</label>
+            <input id="help-tx-id" type="text" maxlength="25" placeholder="Contoh: TX-8841" class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm">
+          </div>
+
+          <div>
+            <label for="help-message" class="block text-xs font-extrabold text-[#1C1917] mb-1">Detail Pesan atau Kronologi *</label>
+            <textarea id="help-message" rows="3" maxlength="300" required placeholder="Jelaskan pertanyaan atau kendala Anda secara singkat..." class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3 px-4 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-white text-sm font-extrabold transition-colors">
+            Kirim Tiket Bantuan
+          </button>
+        </form>
+
+        <!-- Riwayat Tiket Bantuan Pengguna -->
+        <div id="help-tickets-history" class="pt-3 border-t border-[#E7E0D5] space-y-2">
+          <!-- Di-render aman dengan textContent -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- MOBILE BOTTOM NAVIGATION BAR                                          -->
+  <!-- ===================================================================== -->
+  <nav aria-label="Navigasi Bawah Mobile" class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#E7E0D5] px-2 py-1.5">
+    <div class="grid grid-cols-5 gap-1">
+      <button type="button" data-nav-view="catalog" class="mob-bottom-btn flex flex-col items-center justify-center py-1 rounded-xl text-[#C2410C] font-extrabold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span class="text-[10px] mt-0.5">Katalog</span>
+      </button>
+
+      <button type="button" data-nav-view="about" class="mob-bottom-btn flex flex-col items-center justify-center py-1 rounded-xl text-[#57534E] font-bold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span class="text-[10px] mt-0.5">Tentang</span>
+      </button>
+
+      <button type="button" data-nav-view="guide" class="mob-bottom-btn flex flex-col items-center justify-center py-1 rounded-xl text-[#57534E] font-bold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </svg>
+        <span class="text-[10px] mt-0.5">Panduan</span>
+      </button>
+
+      <button type="button" data-nav-view="help" class="mob-bottom-btn flex flex-col items-center justify-center py-1 rounded-xl text-[#57534E] font-bold">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <span class="text-[10px] mt-0.5">Bantuan</span>
+      </button>
+
+      <button type="button" id="mob-nav-tx" class="flex flex-col items-center justify-center py-1 rounded-xl text-[#15803D] font-extrabold relative">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <polyline points="9 12 11 14 15 10"></polyline>
+        </svg>
+        <span class="text-[10px] mt-0.5">COD OTP</span>
+        <span id="badge-tx-mobile" class="absolute top-0.5 right-3 w-4 h-4 rounded-full bg-[#15803D] text-white text-[9px] font-extrabold flex items-center justify-center">1</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 1: DETAIL PRODUK & CHECKLIST KONDISI TRANSPARAN                 -->
+  <!-- ===================================================================== -->
+  <div id="modal-detail" class="hidden fixed inset-0 z-50 bg-stone-950/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="bg-white w-full max-w-2xl rounded-t-2xl sm:rounded-2xl border border-[#E7E0D5] max-h-[92vh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="px-5 py-4 border-b border-[#E7E0D5] flex items-center justify-between bg-[#FAF7F2]">
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="detail-type-badge" class="px-2.5 py-1 rounded-xl text-xs font-extrabold bg-amber-100 text-amber-900">Preloved</span>
+          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-bold bg-green-100 text-[#15803D]">
+            <span>✓ Real Pict Tanpa Filter</span>
+          </span>
+        </div>
+        <button type="button" data-close-modal="modal-detail" class="p-2 rounded-xl bg-white border border-[#E7E0D5] text-[#57534E] hover:text-[#1C1917]" aria-label="Tutup detail">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="p-5 overflow-y-auto space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="relative rounded-2xl overflow-hidden border border-[#E7E0D5] bg-[#FAF7F2] aspect-square">
+            <img id="detail-img" src="" alt="Foto asli produk" class="w-full h-full object-cover">
+            <div class="absolute bottom-3 left-3 right-3 bg-stone-900/85 text-white px-3 py-2 rounded-xl text-xs flex items-center justify-between">
+              <span id="detail-distance-label" class="font-bold">0.8 km</span>
+              <span id="detail-condition-score" class="px-2 py-0.5 rounded-lg bg-[#15803D] font-extrabold">94% Mulus</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-between space-y-3">
+            <div>
+              <h2 id="detail-title" class="text-lg sm:text-xl font-extrabold text-[#1C1917] leading-snug">Judul Barang</h2>
+              <p id="detail-price" class="text-2xl font-extrabold text-[#C2410C] mt-1">Rp 0</p>
+
+              <div class="mt-3 p-3 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] flex items-center justify-between">
+                <div>
+                  <p id="detail-seller" class="text-xs sm:text-sm font-extrabold text-[#1C1917]">Nama Penjual</p>
+                  <p id="detail-seller-stats" class="text-xs text-[#57534E]">Terverifikasi</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-xl bg-green-100 text-[#15803D] text-xs font-bold">Tetangga Lokal</span>
+              </div>
+
+              <div class="mt-3 p-3 rounded-2xl bg-amber-50 border border-amber-200">
+                <p class="text-[11px] font-extrabold uppercase tracking-wider text-amber-900">Ringkasan Kondisi & Minus Jujur:</p>
+                <p id="detail-minus" class="text-xs sm:text-sm text-amber-950 mt-1 font-semibold"></p>
+              </div>
+            </div>
+
+            <div id="detail-flex-tags" class="flex flex-wrap gap-1.5"></div>
+          </div>
+        </div>
+
+        <div class="bg-[#FAF7F2] rounded-2xl border border-[#E7E0D5] p-4">
+          <h3 class="text-xs sm:text-sm font-extrabold text-[#1C1917] mb-2.5">
+            Checklist Detail Kondisi Fisik (Terverifikasi Penjual)
+          </h3>
+          <ul id="detail-checklist" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-[#1C1917]"></ul>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-extrabold uppercase tracking-wider text-[#57534E] mb-1">Deskripsi Barang</h3>
+          <p id="detail-desc" class="text-xs sm:text-sm text-[#1C1917] leading-relaxed"></p>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-[#E7E0D5] bg-[#FAF7F2] grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        <button type="button" id="btn-detail-chat" class="w-full py-3 px-4 rounded-2xl bg-white border-2 border-[#C2410C] text-[#C2410C] hover:bg-orange-50 font-extrabold text-xs sm:text-sm transition-colors">
+          Chat, Tawar Harga / Barter
+        </button>
+        <button type="button" id="btn-detail-cod" class="w-full py-3 px-4 rounded-2xl bg-[#15803D] hover:bg-green-800 text-white font-extrabold text-xs sm:text-sm transition-colors">
+          Jadwalkan COD Aman (OTP)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 2: CHAT INTERAKTIF, MAKE AN OFFER (DISKON CEPAT) & BARTER       -->
+  <!-- ===================================================================== -->
+  <div id="modal-chat" class="hidden fixed inset-0 z-50 bg-stone-950/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="bg-white w-full max-w-xl rounded-t-2xl sm:rounded-2xl border border-[#E7E0D5] h-[92vh] sm:h-[86vh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="px-5 py-3.5 border-b border-[#E7E0D5] bg-[#FAF7F2] flex items-center justify-between">
+        <div>
+          <div class="flex items-center gap-2">
+            <h2 id="chat-seller-name" class="text-base font-extrabold text-[#1C1917]">Penjual</h2>
+            <span class="px-2 py-0.5 rounded-full bg-green-100 text-[#15803D] text-[11px] font-bold">Aktif</span>
+          </div>
+          <p id="chat-product-summary" class="text-xs text-[#57534E] font-semibold mt-0.5">Produk</p>
+        </div>
+        <button type="button" data-close-modal="modal-chat" class="p-2 rounded-xl bg-white border border-[#E7E0D5] text-[#57534E]" aria-label="Tutup chat">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Riwayat Chat & Daftar Penawaran -->
+      <div id="chat-messages-box" class="flex-1 p-4 overflow-y-auto space-y-3 bg-[#FAF7F2]/70"></div>
+
+      <!-- Panel Aksi Chat / Tawar Harga / Barter -->
+      <div class="border-t border-[#E7E0D5] bg-white p-3.5 space-y-3">
+        <div class="grid grid-cols-3 gap-1.5">
+          <button type="button" data-chat-mode="text" class="chat-mode-btn py-2 px-2 rounded-xl text-xs font-extrabold bg-[#1C1917] text-white transition-colors">
+            Chat Biasa
+          </button>
+          <button type="button" data-chat-mode="offer" class="chat-mode-btn py-2 px-2 rounded-xl text-xs font-bold bg-[#FAF7F2] text-[#57534E] border border-[#E7E0D5] transition-colors">
+            Tawar Harga
+          </button>
+          <button type="button" data-chat-mode="barter" class="chat-mode-btn py-2 px-2 rounded-xl text-xs font-bold bg-[#FAF7F2] text-[#57534E] border border-[#E7E0D5] transition-colors">
+            Ajukan Barter
+          </button>
+        </div>
+
+        <!-- Tab 1: Chat Teks -->
+        <form id="form-chat-text" class="flex gap-2">
+          <input id="input-chat-text" type="text" maxlength="200" required placeholder="Tanya kelengkapan atau ajak ketemuan COD..." class="flex-1 px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm focus:outline-none focus:border-[#C2410C]">
+          <button type="submit" class="px-4 py-2.5 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-white text-xs sm:text-sm font-extrabold">
+            Kirim
+          </button>
+        </form>
+
+        <!-- Tab 2: Make an Offer + Tombol Diskon Cepat -->
+        <form id="form-chat-offer" class="hidden space-y-2.5">
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-[#57534E] font-semibold">Harga Penjual: <strong id="offer-original-price" class="text-[#1C1917]">Rp 0</strong></span>
+            <div class="flex gap-1">
+              <button type="button" data-discount="5" class="quick-discount-btn px-2 py-1 rounded-lg bg-orange-50 border border-orange-200 text-[#C2410C] font-extrabold text-[11px]">-5%</button>
+              <button type="button" data-discount="10" class="quick-discount-btn px-2 py-1 rounded-lg bg-orange-50 border border-orange-200 text-[#C2410C] font-extrabold text-[11px]">-10%</button>
+              <button type="button" data-discount="15" class="quick-discount-btn px-2 py-1 rounded-lg bg-orange-50 border border-orange-200 text-[#C2410C] font-extrabold text-[11px]">-15%</button>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <div class="relative flex-1">
+              <span class="absolute inset-y-0 left-3.5 flex items-center text-xs font-extrabold text-[#57534E]">Rp</span>
+              <input id="input-offer-amount" type="number" min="5000" step="1000" required placeholder="Nominal tawaran..." class="w-full pl-9 pr-3 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm font-extrabold text-[#1C1917]">
+            </div>
+            <button type="submit" class="px-4 py-2.5 rounded-2xl bg-[#D97706] hover:bg-amber-700 text-white text-xs sm:text-sm font-extrabold shrink-0">
+              Kirim Tawaran
+            </button>
+          </div>
+        </form>
+
+        <!-- Tab 3: Ajukan Barter (Pilih Koleksi atau Input Detail Barang Tukar Baru) -->
+        <form id="form-chat-barter" class="hidden space-y-2">
+          <div class="flex items-center justify-between">
+            <label for="select-barter-mode" class="text-xs font-extrabold text-[#1C1917]">Sumber Barang Tukar:</label>
+            <select id="select-barter-mode" class="px-2.5 py-1 rounded-xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs font-bold text-[#1C1917]">
+              <option value="existing">Dari Koleksi Saya</option>
+              <option value="custom">Ketik Barang Tukar Baru</option>
+            </select>
+          </div>
+
+          <div id="barter-existing-wrap">
+            <select id="select-barter-item" class="w-full px-3 py-2 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs font-bold text-[#1C1917]"></select>
+          </div>
+
+          <div id="barter-custom-wrap" class="hidden space-y-2">
+            <input id="custom-barter-title" type="text" maxlength="60" placeholder="Nama barang tukar milik Anda (misal: Jam Tangan Casio)" class="w-full px-3 py-2 rounded-xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs">
+            <div class="grid grid-cols-2 gap-2">
+              <input id="custom-barter-cond" type="text" maxlength="60" placeholder="Kondisi (misal: 90% mulus)" class="px-3 py-2 rounded-xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs">
+              <label class="px-3 py-2 rounded-xl bg-orange-50 border border-orange-200 text-[11px] font-bold text-[#C2410C] cursor-pointer flex items-center justify-center truncate">
+                <span id="custom-barter-photo-label">+ Foto Real Pict</span>
+                <input id="custom-barter-photo" type="file" accept="image/*" class="hidden">
+              </label>
+            </div>
+          </div>
+
+          <div class="flex gap-2">
+            <div class="relative flex-1">
+              <span class="absolute inset-y-0 left-3 flex items-center text-xs font-bold text-[#57534E]">+Rp</span>
+              <input id="input-barter-topup" type="number" min="0" step="5000" value="0" placeholder="Tambah uang tunai" class="w-full pl-10 pr-3 py-2 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs font-bold text-[#1C1917]">
+            </div>
+            <button type="submit" class="px-4 py-2 rounded-2xl bg-[#15803D] hover:bg-green-800 text-white text-xs font-extrabold shrink-0">
+              Kirim Barter
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 3: JADWAL COD AMAN (SAFE MEETUP) & PEMBUATAN ESCROW OTP         -->
+  <!-- ===================================================================== -->
+  <div id="modal-cod" class="hidden fixed inset-0 z-50 bg-stone-950/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="bg-white w-full max-w-lg rounded-t-2xl sm:rounded-2xl border border-[#E7E0D5] max-h-[92vh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="px-5 py-4 border-b border-[#E7E0D5] bg-[#FAF7F2] flex items-center justify-between">
+        <div>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Jadwal COD Aman (Safe Meetup)</h2>
+          <p class="text-xs text-[#57534E]">Escrow aktif dengan verifikasi 6-digit kode OTP</p>
+        </div>
+        <button type="button" data-close-modal="modal-cod" class="p-2 rounded-xl bg-white border border-[#E7E0D5] text-[#57534E]" aria-label="Tutup modal COD">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form id="form-cod-schedule" class="p-5 overflow-y-auto space-y-4">
+        <div class="p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5]">
+          <p class="text-xs font-bold text-[#57534E]">Barang Transaksi:</p>
+          <p id="cod-item-title" class="text-sm font-extrabold text-[#1C1917] mt-0.5">Nama Produk</p>
+          <p id="cod-agreed-price" class="text-lg font-extrabold text-[#C2410C] mt-1">Rp 0</p>
+        </div>
+
+        <div>
+          <label for="cod-location-select" class="block text-xs font-extrabold text-[#1C1917] mb-1.5">
+            1. Pilih Titik Temu Publik Terverifikasi
+          </label>
+          <select id="cod-location-select" required class="w-full px-3.5 py-2.5 rounded-2xl bg-white border border-[#E7E0D5] text-xs sm:text-sm font-bold text-[#1C1917]">
+            <option value="Minimarket Indomaret Point Jl. Merdeka (Area Kasir & CCTV)">Minimarket Indomaret Point Jl. Merdeka (Area Kasir & CCTV)</option>
+            <option value="Minimarket Alfamart Simpang Kampus Unsam">Minimarket Alfamart Simpang Kampus Unsam</option>
+            <option value="Area Kampus / Lobi Gedung Rektorat">Area Kampus / Lobi Gedung Rektorat</option>
+            <option value="Taman Kota Bambu Runcing (Area Terbuka Ramai)">Taman Kota Bambu Runcing (Area Terbuka Ramai)</option>
+            <option value="Pos Satpam Utama Perumahan Griya Asri">Pos Satpam Utama Perumahan Griya Asri</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="cod-date" class="block text-xs font-extrabold text-[#1C1917] mb-1.5">2. Tanggal COD</label>
+            <input id="cod-date" type="date" required class="w-full px-3.5 py-2.5 rounded-2xl bg-white border border-[#E7E0D5] text-xs sm:text-sm font-bold text-[#1C1917]">
+          </div>
+          <div>
+            <label for="cod-time" class="block text-xs font-extrabold text-[#1C1917] mb-1.5">3. Jam Pertemuan</label>
+            <input id="cod-time" type="time" value="16:00" required class="w-full px-3.5 py-2.5 rounded-2xl bg-white border border-[#E7E0D5] text-xs sm:text-sm font-bold text-[#1C1917]">
+          </div>
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-green-50 border border-green-200 text-xs text-green-950 space-y-1">
+          <p class="font-extrabold text-[#15803D]">Perlindungan Dana Escrow OTP:</p>
+          <p>Dana ditahan aman oleh sistem. Saat serah terima barang di titik temu, periksa kondisi fisik lalu konfirmasi <strong>6-digit kode OTP</strong> agar status berubah menjadi <strong>Dana Cair ke Penjual</strong>.</p>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 px-5 rounded-2xl bg-[#15803D] hover:bg-green-800 text-white font-extrabold text-sm transition-colors">
+          Sepakati Jadwal & Buat Kode OTP
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 4: TAMBAH BARANG BARU (WAJIB CHECKLIST KONDISI & REAL PICT)     -->
+  <!-- ===================================================================== -->
+  <div id="modal-sell" class="hidden fixed inset-0 z-50 bg-stone-950/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="bg-white w-full max-w-xl rounded-t-2xl sm:rounded-2xl border border-[#E7E0D5] max-h-[92vh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="px-5 py-4 border-b border-[#E7E0D5] bg-[#FAF7F2] flex items-center justify-between">
+        <div>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Pasang Lungsuran Baru</h2>
+          <p class="text-xs text-[#57534E]">Wajib checklist kondisi transparan & foto real pict</p>
+        </div>
+        <button type="button" data-close-modal="modal-sell" class="p-2 rounded-xl bg-white border border-[#E7E0D5] text-[#57534E]" aria-label="Tutup form jual">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form id="form-add-product" class="p-5 overflow-y-auto space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="sm:col-span-2">
+            <label for="sell-title" class="block text-xs font-extrabold text-[#1C1917] mb-1">Nama Barang *</label>
+            <input id="sell-title" type="text" maxlength="70" required placeholder="Contoh: Lampu Meja Kayu Handmade" class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm">
+          </div>
+          <div>
+            <label for="sell-type" class="block text-xs font-extrabold text-[#1C1917] mb-1">Kategori *</label>
+            <select id="sell-type" class="w-full px-3 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm font-bold">
+              <option value="Preloved">Preloved</option>
+              <option value="Handmade">Handmade</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <label for="sell-price" class="block text-xs font-extrabold text-[#1C1917] mb-1">Harga (Rp) *</label>
+            <input id="sell-price" type="number" min="5000" step="1000" required placeholder="120000" class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm font-extrabold">
+          </div>
+          <div>
+            <label for="sell-distance" class="block text-xs font-extrabold text-[#1C1917] mb-1">Lokasi & Jarak *</label>
+            <select id="sell-distance" class="w-full px-3 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm font-bold">
+              <option value="0.7|Kampus Unsam">0.7 km • Kampus Unsam</option>
+              <option value="1.6|Langsa Kota">1.6 km • Langsa Kota</option>
+              <option value="2.9|Gampong Jawa">2.9 km • Gampong Jawa</option>
+              <option value="4.4|Paya Bujok">4.4 km • Paya Bujok</option>
+              <option value="7.8|Langsa Lama">7.8 km • Langsa Lama</option>
+            </select>
+          </div>
+          <div>
+            <label for="sell-score" class="block text-xs font-extrabold text-[#1C1917] mb-1">Persentase Mulus (%) *</label>
+            <input id="sell-score" type="number" min="50" max="100" value="92" required class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm font-extrabold">
+          </div>
+        </div>
+
+        <!-- Upload Foto Real Pict Wajib -->
+        <div class="p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold text-[#1C1917]">Foto Asli Tanpa Filter (Real Pict) *</span>
+            <span id="sell-photo-status" class="px-2 py-0.5 rounded-lg bg-amber-100 text-amber-900 text-[11px] font-bold">Belum dipilih</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <img id="sell-photo-preview" src="" alt="Pratinjau foto asli" class="w-20 h-20 rounded-2xl object-cover border border-[#E7E0D5] bg-white shrink-0">
+            <div class="flex-1 space-y-2">
+              <input id="sell-photo-input" type="file" accept="image/*" class="block w-full text-xs text-[#57534E] file:mr-2.5 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-extrabold file:bg-[#C2410C] file:text-white">
+              <button type="button" id="btn-use-sample-realpict" class="px-3 py-1.5 rounded-xl bg-white border border-[#E7E0D5] hover:border-[#15803D] text-[11px] font-bold text-[#15803D]">
+                Gunakan Foto Kamera Terverifikasi
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checklist Kondisi Fisik Transparan (Wajib) -->
+        <div class="p-3.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-2">
+          <p class="text-xs font-extrabold text-[#1C1917]">Checklist Kondisi Fisik Transparan (Wajib centang minimal 2) *</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <label class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#E7E0D5] cursor-pointer">
+              <input type="checkbox" class="sell-check-item accent-[#15803D]" value="Fungsi utama 100% normal & siap pakai">
+              <span>Fungsi utama 100% normal</span>
+            </label>
+            <label class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#E7E0D5] cursor-pointer">
+              <input type="checkbox" class="sell-check-item accent-[#15803D]" value="Foto real pict asli tanpa filter">
+              <span>Real pict tanpa filter</span>
+            </label>
+            <label class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#E7E0D5] cursor-pointer">
+              <input type="checkbox" class="sell-check-item accent-[#15803D]" value="Sudah dibersihkan & siap COD">
+              <span>Sudah dibersihkan</span>
+            </label>
+            <label class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-[#E7E0D5] cursor-pointer">
+              <input type="checkbox" class="sell-check-item accent-[#15803D]" value="Minus jujur sudah ditulis lengkap">
+              <span>Minus jujur tercantum</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label for="sell-minus" class="block text-xs font-extrabold text-[#1C1917] mb-1">Detail Kondisi & Minus Jujur *</label>
+          <input id="sell-minus" type="text" maxlength="120" required placeholder="Contoh: 92% mulus, minus lecet halus di bagian bawah" class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm">
+        </div>
+
+        <div>
+          <label for="sell-desc" class="block text-xs font-extrabold text-[#1C1917] mb-1">Deskripsi Lengkap *</label>
+          <textarea id="sell-desc" rows="2" maxlength="250" required placeholder="Ceritakan bahan pembuatan atau alasan dijual..." class="w-full px-3.5 py-2 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm"></textarea>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <label class="inline-flex items-center gap-2 text-xs font-extrabold text-[#1C1917] cursor-pointer">
+            <input id="sell-allow-offer" type="checkbox" checked class="w-4 h-4 accent-[#C2410C]">
+            <span>Terima Tawar Harga</span>
+          </label>
+          <label class="inline-flex items-center gap-2 text-xs font-extrabold text-[#1C1917] cursor-pointer">
+            <input id="sell-allow-barter" type="checkbox" checked class="w-4 h-4 accent-[#D97706]">
+            <span>Terima Barter</span>
+          </label>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 px-5 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-white font-extrabold text-sm transition-colors">
+          Tayangkan Barang ke Katalog
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 5: TRANSAKSI COD SAFE MEETUP & KONFIRMASI OTP ESCROW            -->
+  <!-- ===================================================================== -->
+  <div id="modal-transactions" class="hidden fixed inset-0 z-50 bg-stone-950/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4">
+    <div class="bg-white w-full max-w-xl rounded-t-2xl sm:rounded-2xl border border-[#E7E0D5] max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="px-5 py-4 border-b border-[#E7E0D5] bg-[#FAF7F2] flex items-center justify-between">
+        <div>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Transaksi COD & Konfirmasi OTP Escrow</h2>
+          <p class="text-xs text-[#57534E]">Masukkan 6-digit OTP saat barang diterima agar dana cair ke penjual</p>
+        </div>
+        <button type="button" data-close-modal="modal-transactions" class="p-2 rounded-xl bg-white border border-[#E7E0D5] text-[#57534E]" aria-label="Tutup transaksi">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div id="transactions-list" class="p-5 overflow-y-auto space-y-4"></div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" aria-live="polite" class="fixed top-20 right-4 left-4 sm:left-auto sm:w-96 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT MODULAR AMAN (100% DOM CREATION & TEXTCONTENT ANTI-XSS)    -->
+  <!-- ===================================================================== -->
+  <script>
+    (function () {
+      "use strict";
+
+      /* -------------------------------------------------------------------
+       * 1. GENERATOR ARTWORK REAL-PICT SVG DATA URI (CSP & OFFLINE SAFE)
+       * ------------------------------------------------------------------- */
+      function createProductArtwork(bgHex, accentHex, badgeText, titleText) {
+        const svg =
+          '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="450" viewBox="0 0 600 450">' +
+          '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+          '<stop offset="0%" stop-color="' + bgHex + '"/>' +
+          '<stop offset="100%" stop-color="' + accentHex + '"/>' +
+          '</linearGradient></defs>' +
+          '<rect width="600" height="450" fill="url(#g)"/>' +
+          '<circle cx="495" cy="95" r="85" fill="#ffffff" fill-opacity="0.14"/>' +
+          '<circle cx="105" cy="365" r="105" fill="#000000" fill-opacity="0.08"/>' +
+          '<rect x="44" y="42" width="215" height="34" rx="17" fill="#1C1917" fill-opacity="0.7"/>' +
+          '<text x="151" y="64" font-family="sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">' + badgeText + '</text>' +
+          '<rect x="44" y="295" width="512" height="110" rx="22" fill="#FFFFFF" fill-opacity="0.93"/>' +
+          '<text x="68" y="342" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1C1917">' + titleText + '</text>' +
+          '<text x="68" y="376" font-family="sans-serif" font-size="15" fill="#57534E">Real Pict Kamera Asli • Tanpa Filter</text>' +
+          '</svg>';
+        return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+      }
+
+      /* -------------------------------------------------------------------
+       * 2. DATA AWAL KATALOG, KOLEKSI BARTER, TRANSAKSI & TIKET BANTUAN
+       * ------------------------------------------------------------------- */
+      const INITIAL_PRODUCTS = [
+        {
+          id: "prd-101",
+          title: "Kamera Analog Fujifilm Simple Ace + Roll Film",
+          type: "Preloved",
+          price: 185000,
+          distanceKm: 0.8,
+          area: "Kampus Unsam",
+          conditionScore: 92,
+          seller: "Raka Pratama",
+          sellerStats: "Mahasiswa • 11 COD Sukses",
+          allowOffer: true,
+          allowBarter: true,
+          minusNote: "92% mulus, minus lecet halus di bagian bawah bodi plastik.",
+          checklist: [
+            "92% mulus, minus lecet halus di bagian bawah",
+            "Shutter & lampu flash menyala normal 100%",
+            "Lensa bersih bebas jamur & kabut",
+            "Foto asli kamera tanpa filter (real pict)"
+          ],
+          description: "Kamera saku ringan cocok untuk dokumentasi acara kampus atau jalan sore. Dijual karena sudah beralih ke kamera mirrorless.",
+          image: createProductArtwork("#D97706", "#9A3412", "REAL PICT • KAMERA", "Fujifilm Analog 35mm")
+        },
+        {
+          id: "prd-102",
+          title: "Set Cangkir Keramik Handmade Glasir Tanah Liat",
+          type: "Handmade",
+          price: 110000,
+          distanceKm: 1.5,
+          area: "Langsa Kota",
+          conditionScore: 100,
+          seller: "Studio Kriya Nadira",
+          sellerStats: "Perajin Lokal • 24 COD Sukses",
+          allowOffer: true,
+          allowBarter: true,
+          minusNote: "100% baru buatan tangan, corak glasir alami unik di tiap cangkir.",
+          checklist: [
+            "100% baru karya perajin keramik lokal",
+            "Glasir food-grade aman untuk minuman panas",
+            "Foto real pict pencahayaan alami tanpa filter",
+            "Dikemas kotak kardus tebal siap COD"
+          ],
+          description: "Sepasang cangkir keramik ukuran 220ml dibakar suhu tinggi. Cocok untuk seduh kopi manual V60 atau hadiah sahabat.",
+          image: createProductArtwork("#B45309", "#78350F", "HANDMADE LOKAL", "Set Cangkir Keramik")
+        },
+        {
+          id: "prd-103",
+          title: "Jaket Parka Kanvas Olive Preloved Ukuran L",
+          type: "Preloved",
+          price: 145000,
+          distanceKm: 2.4,
+          area: "Gampong Jawa",
+          conditionScore: 90,
+          seller: "Dimas Saputra",
+          sellerStats: "Warga Terverifikasi • 8 COD Sukses",
+          allowOffer: true,
+          allowBarter: true,
+          minusNote: "90% mulus, warna sedikit memudar alami di lipatan lengan.",
+          checklist: [
+            "90% mulus, minus pudar halus di lipatan lengan",
+            "Resleting YKK & kancing cetet lancar",
+            "Sudah dicuci bersih wangi & higienis",
+            "Real pict outdoor tanpa filter warna"
+          ],
+          description: "Bahan kanvas tebal nyaman dipakai berkendara motor malam hari. Kantong dalam muat dompet dan ponsel 6.7 inci.",
+          image: createProductArtwork("#3F6212", "#14532D", "REAL PICT • FASHION", "Jaket Parka Kanvas L")
+        },
+        {
+          id: "prd-104",
+          title: "Tas Totebag Tenun & Kulit Sintetis Handmade",
+          type: "Handmade",
+          price: 165000,
+          distanceKm: 3.7,
+          area: "Paya Bujok",
+          conditionScore: 98,
+          seller: "Ayu Lestari Craft",
+          sellerStats: "UMKM Rumahan • 19 COD Sukses",
+          allowOffer: true,
+          allowBarter: false,
+          minusNote: "98% mulus buatan tangan skala kecil, jahitan rapi dengan furing katun.",
+          checklist: [
+            "Muat laptop 14 inci + buku catatan tebal",
+            "Tali bahu diperkuat jahitan silang ganda",
+            "Foto asli tanpa filter studio",
+            "Bonus gantungan kunci rajut handmade"
+          ],
+          description: "Perpaduan kain tenun motif lokal dengan bahan kulit sintetis tahan percikan air. Cocok untuk kuliah maupun kerja.",
+          image: createProductArtwork("#C2410C", "#7C2D12", "HANDMADE LOKAL", "Totebag Tenun 14 Inci")
+        },
+        {
+          id: "prd-105",
+          title: "Standing Lamp Kayu Jati Belanda Minimalis",
+          type: "Handmade",
+          price: 210000,
+          distanceKm: 4.5,
+          area: "Teungoh",
+          conditionScore: 96,
+          seller: "Bengkel Kayu Pak Hendra",
+          sellerStats: "Perajin Kayu • 31 COD Sukses",
+          allowOffer: true,
+          allowBarter: true,
+          minusNote: "96% mulus, serat kayu alami memiliki mata kayu kecil yang estetik.",
+          checklist: [
+            "Kabel saklar panjang 1.8 meter aman",
+            "Finishing vernis water-based halus",
+            "Bonus bohlam LED warm white 5W",
+            "Foto asli di ruang tamu tanpa filter"
+          ],
+          description: "Lampu sudut ruangan dari kayu pinus daur ulang pilihan. Memberikan pencahayaan hangat untuk kamar tidur atau meja belajar.",
+          image: createProductArtwork("#A16207", "#451A03", "HANDMADE KAYU", "Lampu Meja Jati Belanda")
+        },
+        {
+          id: "prd-106",
+          title: "Keyboard Mekanikal 65% Brown Switch Bekas",
+          type: "Preloved",
+          price: 275000,
+          distanceKm: 8.1,
+          area: "Langsa Lama",
+          conditionScore: 89,
+          seller: "Fajar Nugroho",
+          sellerStats: "Warga Terverifikasi • 6 COD Sukses",
+          allowOffer: true,
+          allowBarter: true,
+          minusNote: "89% mulus, minus dus bawaan hilang, diganti kabel Type-C braided.",
+          checklist: [
+            "89% mulus, minus dus asli tidak ada",
+            "Semua 68 tombol responsif tanpa double-click",
+            "Keycaps sudah dibersihkan menyeluruh",
+            "Real pict meja kerja tanpa filter"
+          ],
+          description: "Keyboard ringkas nyaman untuk mengetik skripsi maupun coding. Bisa barter dengan headset atau mouse wireless setara.",
+          image: createProductArtwork("#44403C", "#1C1917", "REAL PICT • GADGET", "Mechanical Keyboard 65%")
+        }
+      ];
+
+      const INITIAL_MY_BARTER_ITEMS = [
+        { id: "brt-1", title: "Headphone Bluetooth Over-Ear (90% Mulus, busa sedikit keriput)", value: 160000 },
+        { id: "brt-2", title: "Paket 3 Buku Desain UI/UX & Novel (95% Mulus tanpa coretan)", value: 120000 }
+      ];
+
+      const INITIAL_TRANSACTIONS = [
+        {
+          id: "TX-8841",
+          productId: "prd-103",
+          productTitle: "Jaket Parka Kanvas Olive Preloved Ukuran L",
+          seller: "Dimas Saputra",
+          amount: 135000,
+          location: "Minimarket Indomaret Point Jl. Merdeka (Area Kasir & CCTV)",
+          date: "2026-11-28",
+          time: "16:00",
+          otp: "492815",
+          status: "MENUNGGU_COD"
+        }
+      ];
+
+      /* -------------------------------------------------------------------
+       * 3. STATE APLIKASI & LOCALSTORAGE PERSISTENCE
+       * ------------------------------------------------------------------- */
+      const STORAGE_KEY = "lungsuran_c2c_v2";
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed.products) && parsed.products.length > 0) {
+              return parsed;
+            }
+          }
+        } catch (err) {
+          // Gunakan default state
+        }
+        return {
+          products: INITIAL_PRODUCTS,
+          myBarterItems: INITIAL_MY_BARTER_ITEMS,
+          transactions: INITIAL_TRANSACTIONS,
+          chats: {},
+          helpTickets: []
+        };
+      }
+
+      const appState = loadState();
+
+      function saveState() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+        } catch (err) {
+          // Abaikan jika storage penuh
+        }
+      }
+
+      const uiState = {
+        activeView: "catalog",
+        maxRadius: 5,
+        category: "all",
+        barterOnly: false,
+        searchQuery: "",
+        sortBy: "nearest",
+        activeProductId: null,
+        agreedPriceOverride: null,
+        chatMode: "text",
+        sellPhotoDataUrl: "",
+        sellPhotoReady: false,
+        customBarterPhotoName: ""
+      };
+
+      /* -------------------------------------------------------------------
+       * 4. UTILITAS KEAMANAN DOM (ANTI-XSS) & NOTIFIKASI TOAST
+       * ------------------------------------------------------------------- */
+      function formatRupiah(num) {
+        const n = Number(num) || 0;
+        return "Rp " + n.toLocaleString("id-ID");
+      }
+
+      function clearElement(el) {
+        while (el && el.firstChild) {
+          el.removeChild(el.firstChild);
+        }
+      }
+
+      function showToast(title, message, variant) {
+        const container = document.getElementById("toast-container");
+        const toast = document.createElement("div");
+        const isSuccess = variant === "success";
+        const isWarn = variant === "warn";
+
+        toast.className =
+          "pointer-events-auto rounded-2xl p-3.5 shadow-lg border bg-white flex items-start gap-3 animate-fade-up " +
+          (isSuccess ? "border-green-300" : isWarn ? "border-amber-300" : "border-[#E7E0D5]");
+
+        const icon = document.createElement("span");
+        icon.className =
+          "w-7 h-7 rounded-xl flex items-center justify-center shrink-0 text-white font-extrabold text-xs " +
+          (isSuccess ? "bg-[#15803D]" : isWarn ? "bg-[#D97706]" : "bg-[#C2410C]");
+        icon.textContent = isSuccess ? "✓" : isWarn ? "!" : "i";
+
+        const body = document.createElement("div");
+        body.className = "flex-1 min-w-0";
+
+        const h = document.createElement("p");
+        h.className = "text-xs font-extrabold text-[#1C1917]";
+        h.textContent = title;
+
+        const p = document.createElement("p");
+        p.className = "text-xs text-[#57534E] mt-0.5 leading-snug";
+        p.textContent = message;
+
+        body.appendChild(h);
+        body.appendChild(p);
+        toast.appendChild(icon);
+        toast.appendChild(body);
+        container.appendChild(toast);
+
+        setTimeout(function () {
+          if (toast.parentNode) {
+            toast.parentNode.removeChild(toast);
+          }
+        }, 4200);
+      }
+
+      function openModal(id) {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove("hidden");
+      }
+
+      function closeModal(id) {
+        const el = document.getElementById(id);
+        if (el) el.classList.add("hidden");
+      }
+
+      function generateSecureOtp() {
+        if (window.crypto && window.crypto.getRandomValues) {
+          const arr = new Uint32Array(1);
+          window.crypto.getRandomValues(arr);
+          return String(100000 + (arr[0] % 900000));
+        }
+        return String(Math.floor(100000 + Math.random() * 900000));
+      }
+
+      /* -------------------------------------------------------------------
+       * 5. NAVIGASI MULTI-HALAMAN (KATALOG, TENTANG, PANDUAN, BANTUAN)
+       * ------------------------------------------------------------------- */
+      function switchView(viewName) {
+        uiState.activeView = viewName;
+
+        document.querySelectorAll(".app-view").forEach(function (sec) {
+          sec.classList.add("hidden");
+        });
+        const target = document.getElementById("view-" + viewName);
+        if (target) {
+          target.classList.remove("hidden");
+        }
+
+        // Update Desktop Nav
+        document.querySelectorAll(".main-nav-btn").forEach(function (btn) {
+          const active = btn.getAttribute("data-nav-view") === viewName;
+          btn.className = active
+            ? "main-nav-btn px-3.5 py-2 rounded-xl text-xs font-extrabold bg-[#1C1917] text-white transition-colors"
+            : "main-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold text-[#57534E] hover:text-[#1C1917] transition-colors";
+        });
+
+        // Update Tablet Sub-Nav
+        document.querySelectorAll(".main-nav-btn-mob").forEach(function (btn) {
+          const active = btn.getAttribute("data-nav-view") === viewName;
+          btn.className = active
+            ? "main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-extrabold bg-[#1C1917] text-white"
+            : "main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E]";
+        });
+
+        // Update Mobile Bottom Nav
+        document.querySelectorAll(".mob-bottom-btn").forEach(function (btn) {
+          const active = btn.getAttribute("data-nav-view") === viewName;
+          btn.className = active
+            ? "mob-bottom-btn flex flex-col items-center justify-center py-1 rounded-xl text-[#C2410C] font-extrabold"
+            : "mob-bottom-btn flex flex-col items-center justify-center py-1 rounded-xl text-[#57534E] font-bold";
+        });
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      /* -------------------------------------------------------------------
+       * 6. RENDER KATALOG PRODUK (100% DOM AMAN)
+       * ------------------------------------------------------------------- */
+      function getFilteredProducts() {
+        const q = uiState.searchQuery.trim().toLowerCase();
+
+        const filtered = appState.products.filter(function (item) {
+          const matchRadius = uiState.maxRadius >= 15 ? true : item.distanceKm <= uiState.maxRadius;
+          const matchCat = uiState.category === "all" ? true : item.type === uiState.category;
+          const matchBarter = uiState.barterOnly ? Boolean(item.allowBarter) : true;
+          const matchSearch =
+            !q ||
+            item.title.toLowerCase().includes(q) ||
+            item.area.toLowerCase().includes(q) ||
+            item.description.toLowerCase().includes(q);
+          return matchRadius && matchCat && matchBarter && matchSearch;
+        });
+
+        filtered.sort(function (a, b) {
+          if (uiState.sortBy === "cheapest") return a.price - b.price;
+          if (uiState.sortBy === "condition") return b.conditionScore - a.conditionScore;
+          return a.distanceKm - b.distanceKm;
+        });
+
+        return filtered;
+      }
+
+      function renderCatalog() {
+        const grid = document.getElementById("catalog-grid");
+        const emptyBox = document.getElementById("catalog-empty");
+        const countLabel = document.getElementById("catalog-count-label");
+
+        clearElement(grid);
+        const items = getFilteredProducts();
+
+        countLabel.textContent =
+          "Menampilkan " +
+          items.length +
+          " barang (radius " +
+          (uiState.maxRadius >= 15 ? "Semua" : "≤ " + uiState.maxRadius + " km") +
+          ")";
+
+        if (items.length === 0) {
+          emptyBox.classList.remove("hidden");
+          return;
+        }
+        emptyBox.classList.add("hidden");
+
+        items.forEach(function (item) {
+          const card = document.createElement("article");
+          card.className =
+            "bg-white rounded-2xl border border-[#E7E0D5] overflow-hidden shadow-2xs hover:shadow-md hover:border-[#C2410C]/60 transition-all flex flex-col justify-between animate-fade-up cursor-pointer";
+
+          card.addEventListener("click", function () {
+            openProductDetail(item.id);
+          });
+
+          const imgWrap = document.createElement("div");
+          imgWrap.className = "relative aspect-[4/3] bg-[#FAF7F2] overflow-hidden";
+
+          const img = document.createElement("img");
+          img.src = item.image;
+          img.alt = item.title;
+          img.loading = "lazy";
+          img.className = "w-full h-full object-cover hover:scale-105 transition-transform duration-300";
+          imgWrap.appendChild(img);
+
+          // Top Badges: Kategori + Real Pict Tanpa Filter
+          const topBadges = document.createElement("div");
+          topBadges.className = "absolute top-3 left-3 right-3 flex items-center justify-between gap-2";
+
+          const typePill = document.createElement("span");
+          typePill.className =
+            "px-2.5 py-1 rounded-xl text-[11px] font-extrabold " +
+            (item.type === "Handmade" ? "bg-[#D97706] text-white" : "bg-[#1C1917]/90 text-white");
+          typePill.textContent = item.type;
+
+          const realPictPill = document.createElement("span");
+          realPictPill.className =
+            "px-2.5 py-1 rounded-xl text-[11px] font-extrabold bg-white/95 text-[#15803D] border border-green-200";
+          realPictPill.textContent = "✓ Real Pict Tanpa Filter";
+
+          topBadges.appendChild(typePill);
+          topBadges.appendChild(realPictPill);
+          imgWrap.appendChild(topBadges);
+
+          // Bottom Distance & Condition Score
+          const bottomOverlay = document.createElement("div");
+          bottomOverlay.className =
+            "absolute bottom-2.5 left-3 right-3 px-3 py-1.5 rounded-xl bg-stone-950/80 text-white flex items-center justify-between text-xs";
+
+          const distText = document.createElement("span");
+          distText.className = "font-extrabold truncate";
+          distText.textContent = item.distanceKm + " km • " + item.area;
+
+          const scoreText = document.createElement("span");
+          scoreText.className = "font-extrabold text-green-300 shrink-0 ml-2";
+          scoreText.textContent = item.conditionScore + "% Mulus";
+
+          bottomOverlay.appendChild(distText);
+          bottomOverlay.appendChild(scoreText);
+          imgWrap.appendChild(bottomOverlay);
+
+          // Body
+          const body = document.createElement("div");
+          body.className = "p-4 flex-1 flex flex-col justify-between space-y-3";
+
+          const topInfo = document.createElement("div");
+
+          const titleEl = document.createElement("h2");
+          titleEl.className = "text-sm sm:text-base font-extrabold text-[#1C1917] line-clamp-2 leading-snug";
+          titleEl.textContent = item.title;
+
+          const priceEl = document.createElement("p");
+          priceEl.className = "text-lg font-extrabold text-[#C2410C] mt-1";
+          priceEl.textContent = formatRupiah(item.price);
+
+          const minusBox = document.createElement("p");
+          minusBox.className =
+            "mt-2 text-xs text-amber-950 bg-amber-50 border border-amber-200 rounded-xl px-2.5 py-1.5 line-clamp-2 font-medium";
+          minusBox.textContent = item.minusNote;
+
+          topInfo.appendChild(titleEl);
+          topInfo.appendChild(priceEl);
+          topInfo.appendChild(minusBox);
+
+          // Footer
+          const footer = document.createElement("div");
+          footer.className = "pt-2.5 border-t border-[#F3EDE2] flex items-center justify-between gap-2";
+
+          const flexTags = document.createElement("div");
+          flexTags.className = "flex flex-wrap gap-1";
+
+          if (item.allowOffer) {
+            const t1 = document.createElement("span");
+            t1.className = "px-2 py-0.5 rounded-lg bg-orange-50 text-[#C2410C] text-[11px] font-bold";
+            t1.textContent = "Tawar Harga";
+            flexTags.appendChild(t1);
+          }
+          if (item.allowBarter) {
+            const t2 = document.createElement("span");
+            t2.className = "px-2 py-0.5 rounded-lg bg-amber-50 text-[#D97706] text-[11px] font-bold";
+            t2.textContent = "Bisa Barter";
+            flexTags.appendChild(t2);
+          }
+
+          const cta = document.createElement("span");
+          cta.className = "text-xs font-extrabold text-[#15803D] shrink-0";
+          cta.textContent = "Detail & COD →";
+
+          footer.appendChild(flexTags);
+          footer.appendChild(cta);
+
+          body.appendChild(topInfo);
+          body.appendChild(footer);
+
+          card.appendChild(imgWrap);
+          card.appendChild(body);
+          grid.appendChild(card);
+        });
+      }
+
+      /* -------------------------------------------------------------------
+       * 7. DETAIL PRODUK, CHAT NEGOSIASI, BARTER & COD OTP
+       * ------------------------------------------------------------------- */
+      function getProductById(id) {
+        return appState.products.find(function (p) {
+          return p.id === id;
+        });
+      }
+
+      function openProductDetail(productId) {
+        const item = getProductById(productId);
+        if (!item) return;
+
+        uiState.activeProductId = item.id;
+        uiState.agreedPriceOverride = null;
+
+        document.getElementById("detail-type-badge").textContent = item.type;
+        document.getElementById("detail-img").src = item.image;
+        document.getElementById("detail-distance-label").textContent = item.distanceKm + " km • " + item.area;
+        document.getElementById("detail-condition-score").textContent = item.conditionScore + "% Mulus";
+        document.getElementById("detail-title").textContent = item.title;
+        document.getElementById("detail-price").textContent = formatRupiah(item.price);
+        document.getElementById("detail-seller").textContent = item.seller;
+        document.getElementById("detail-seller-stats").textContent = item.sellerStats;
+        document.getElementById("detail-minus").textContent = item.minusNote;
+        document.getElementById("detail-desc").textContent = item.description;
+
+        const tagsWrap = document.getElementById("detail-flex-tags");
+        clearElement(tagsWrap);
+        if (item.allowOffer) {
+          const s1 = document.createElement("span");
+          s1.className = "px-3 py-1 rounded-xl bg-orange-100 text-[#C2410C] text-xs font-bold";
+          s1.textContent = "✓ Terima Tawar Harga";
+          tagsWrap.appendChild(s1);
+        }
+        if (item.allowBarter) {
+          const s2 = document.createElement("span");
+          s2.className = "px-3 py-1 rounded-xl bg-amber-100 text-amber-900 text-xs font-bold";
+          s2.textContent = "⇄ Terima Barter Barang";
+          tagsWrap.appendChild(s2);
+        }
+
+        const listEl = document.getElementById("detail-checklist");
+        clearElement(listEl);
+        item.checklist.forEach(function (point) {
+          const li = document.createElement("li");
+          li.className = "flex items-start gap-2 bg-white p-2.5 rounded-xl border border-[#E7E0D5]";
+
+          const icon = document.createElement("span");
+          icon.className = "text-[#15803D] font-extrabold shrink-0";
+          icon.textContent = "✓";
+
+          const txt = document.createElement("span");
+          txt.className = "font-medium";
+          txt.textContent = point;
+
+          li.appendChild(icon);
+          li.appendChild(txt);
+          listEl.appendChild(li);
+        });
+
+        openModal("modal-detail");
+      }
+
+      function ensureChatThread(product) {
+        if (!appState.chats[product.id]) {
+          appState.chats[product.id] = [
+            {
+              sender: "seller",
+              type: "text",
+              text:
+                "Halo! Barang \"" +
+                product.title +
+                "\" siap COD di area " +
+                product.area +
+                " (" +
+                product.distanceKm +
+                " km). Silakan tawar harga atau ajukan barter barang ya.",
+              time: "Baru saja"
+            }
+          ];
+          saveState();
+        }
+        return appState.chats[product.id];
+      }
+
+      function setChatMode(mode) {
+        uiState.chatMode = mode;
+        document.querySelectorAll(".chat-mode-btn").forEach(function (btn) {
+          const match = btn.getAttribute("data-chat-mode") === mode;
+          btn.className = match
+            ? "chat-mode-btn py-2 px-2 rounded-xl text-xs font-extrabold bg-[#1C1917] text-white transition-colors"
+            : "chat-mode-btn py-2 px-2 rounded-xl text-xs font-bold bg-[#FAF7F2] text-[#57534E] border border-[#E7E0D5] transition-colors";
+        });
+
+        document.getElementById("form-chat-text").classList.toggle("hidden", mode !== "text");
+        document.getElementById("form-chat-offer").classList.toggle("hidden", mode !== "offer");
+        document.getElementById("form-chat-barter").classList.toggle("hidden", mode !== "barter");
+      }
+
+      function renderChatMessages(product) {
+        const box = document.getElementById("chat-messages-box");
+        clearElement(box);
+        const thread = ensureChatThread(product);
+
+        thread.forEach(function (msg) {
+          const isBuyer = msg.sender === "buyer";
+          const row = document.createElement("div");
+          row.className = "flex flex-col " + (isBuyer ? "items-end" : "items-start");
+
+          const bubble = document.createElement("div");
+          bubble.className =
+            "max-w-[85%] rounded-2xl px-4 py-3 text-xs sm:text-sm shadow-2xs " +
+            (isBuyer
+              ? "bg-[#C2410C] text-white rounded-br-xs"
+              : "bg-white border border-[#E7E0D5] text-[#1C1917] rounded-bl-xs");
+
+          if (msg.type === "offer") {
+            const tag = document.createElement("span");
+            tag.className = "inline-block px-2 py-0.5 rounded-lg bg-amber-300 text-stone-950 text-[10px] font-extrabold uppercase mb-1";
+            tag.textContent = "Penawaran Harga";
+            bubble.appendChild(tag);
+          } else if (msg.type === "barter") {
+            const tag = document.createElement("span");
+            tag.className = "inline-block px-2 py-0.5 rounded-lg bg-green-300 text-stone-950 text-[10px] font-extrabold uppercase mb-1";
+            tag.textContent = "Penawaran Barter";
+            bubble.appendChild(tag);
+          }
+
+          const p = document.createElement("p");
+          p.className = "leading-relaxed font-medium";
+          p.textContent = msg.text;
+          bubble.appendChild(p);
+
+          if (msg.acceptedDeal) {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className =
+              "mt-2.5 w-full py-2 px-3 rounded-xl bg-[#15803D] hover:bg-green-800 text-white text-xs font-extrabold transition-colors";
+            btn.textContent = "Kunci Jadwal COD (" + msg.dealLabel + ") →";
+            btn.addEventListener("click", function () {
+              uiState.agreedPriceOverride = msg.dealPrice;
+              closeModal("modal-chat");
+              openCodModal(product.id);
+            });
+            bubble.appendChild(btn);
+          }
+
+          const meta = document.createElement("span");
+          meta.className = "text-[10px] text-[#78716C] mt-1 px-1";
+          meta.textContent = (isBuyer ? "Anda" : product.seller) + " • " + msg.time;
+
+          row.appendChild(bubble);
+          row.appendChild(meta);
+          box.appendChild(row);
+        });
+
+        box.scrollTop = box.scrollHeight;
+      }
+
+      function openChatModal(productId) {
+        const product = getProductById(productId);
+        if (!product) return;
+
+        uiState.activeProductId = product.id;
+        document.getElementById("chat-seller-name").textContent = product.seller;
+        document.getElementById("chat-product-summary").textContent =
+          product.title + " • " + formatRupiah(product.price);
+        document.getElementById("offer-original-price").textContent = formatRupiah(product.price);
+        document.getElementById("input-offer-amount").value = Math.max(
+          5000,
+          Math.round((product.price * 0.9) / 5000) * 5000
+        );
+
+        const sel = document.getElementById("select-barter-item");
+        clearElement(sel);
+        appState.myBarterItems.forEach(function (b) {
+          const opt = document.createElement("option");
+          opt.value = b.id;
+          opt.textContent = b.title + " (Est. " + formatRupiah(b.value) + ")";
+          sel.appendChild(opt);
+        });
+
+        setChatMode("text");
+        renderChatMessages(product);
+        openModal("modal-chat");
+      }
+
+      function simulateSellerResponse(product, action) {
+        const thread = ensureChatThread(product);
+        setTimeout(function () {
+          if (action.type === "text") {
+            thread.push({
+              sender: "seller",
+              type: "text",
+              text: "Siap kak, barang sesuai foto real pict dan checklist kondisi. Bisa ketemuan COD di titik publik sekitar " + product.area + ".",
+              time: "Baru saja"
+            });
+          } else if (action.type === "offer") {
+            const ratio = action.amount / product.price;
+            if (ratio >= 0.8) {
+              thread.push({
+                sender: "seller",
+                type: "text",
+                text: "Deal kak! Tawaran " + formatRupiah(action.amount) + " saya setujui. Yuk langsung atur jadwal COD aman!",
+                time: "Baru saja",
+                acceptedDeal: true,
+                dealPrice: action.amount,
+                dealLabel: formatRupiah(action.amount)
+              });
+            } else {
+              const counter = Math.round((product.price * 0.88) / 5000) * 5000;
+              thread.push({
+                sender: "seller",
+                type: "text",
+                text: "Belum masuk kak kalau segitu. Gimana kalau tengah-tengah di " + formatRupiah(counter) + "? Kalau cocok langsung kita COD.",
+                time: "Baru saja",
+                acceptedDeal: true,
+                dealPrice: counter,
+                dealLabel: formatRupiah(counter)
+              });
+            }
+          } else if (action.type === "barter") {
+            if (!product.allowBarter) {
+              thread.push({
+                sender: "seller",
+                type: "text",
+                text: "Maaf kak, barang ini khusus dijual tunai/COD saja.",
+                time: "Baru saja"
+              });
+            } else {
+              thread.push({
+                sender: "seller",
+                type: "text",
+                text:
+                  "Cocok kak! Saya terima barter dengan \"" +
+                  action.barterDesc +
+                  "\" (+ tunai " +
+                  formatRupiah(action.topup) +
+                  "). Klik tombol di bawah untuk kunci titik temu COD.",
+                time: "Baru saja",
+                acceptedDeal: true,
+                dealPrice: action.topup,
+                dealLabel: "Barter + " + formatRupiah(action.topup)
+              });
+            }
+          }
+          saveState();
+          if (uiState.activeProductId === product.id) {
+            renderChatMessages(product);
+          }
+        }, 450);
+      }
+
+      function openCodModal(productId) {
+        const product = getProductById(productId);
+        if (!product) return;
+
+        uiState.activeProductId = product.id;
+        const finalPrice =
+          uiState.agreedPriceOverride !== null ? uiState.agreedPriceOverride : product.price;
+
+        document.getElementById("cod-item-title").textContent = product.title;
+        document.getElementById("cod-agreed-price").textContent = formatRupiah(finalPrice);
+
+        const tomorrow = new Date(Date.now() + 86400000);
+        const yyyy = tomorrow.getFullYear();
+        const mm = String(tomorrow.getMonth() + 1).padStart(2, "0");
+        const dd = String(tomorrow.getDate()).padStart(2, "0");
+        document.getElementById("cod-date").value = yyyy + "-" + mm + "-" + dd;
+
+        openModal("modal-cod");
+      }
+
+      function updateBadges() {
+        const pendingCount = appState.transactions.filter(function (t) {
+          return t.status === "MENUNGGU_COD";
+        }).length;
+        document.getElementById("badge-tx-desktop").textContent = String(pendingCount);
+        document.getElementById("badge-tx-mobile").textContent = String(pendingCount);
+      }
+
+      function renderTransactionsList() {
+        const container = document.getElementById("transactions-list");
+        clearElement(container);
+
+        if (appState.transactions.length === 0) {
+          const p = document.createElement("p");
+          p.className = "text-xs sm:text-sm text-[#57534E] text-center py-8";
+          p.textContent = "Belum ada jadwal COD aktif.";
+          container.appendChild(p);
+          return;
+        }
+
+        appState.transactions.forEach(function (tx) {
+          const isCompleted = tx.status === "SELESAI";
+          const card = document.createElement("div");
+          card.className =
+            "rounded-2xl border p-4 space-y-3 " +
+            (isCompleted ? "bg-green-50/70 border-green-300" : "bg-[#FAF7F2] border-[#E7E0D5]");
+
+          const head = document.createElement("div");
+          head.className = "flex items-center justify-between gap-2";
+
+          const idText = document.createElement("span");
+          idText.className = "text-xs font-extrabold text-[#57534E]";
+          idText.textContent = tx.id + " • " + tx.seller;
+
+          const statusBadge = document.createElement("span");
+          statusBadge.className =
+            "px-2.5 py-1 rounded-xl text-[11px] font-extrabold " +
+            (isCompleted ? "bg-[#15803D] text-white" : "bg-amber-100 text-amber-900");
+          statusBadge.textContent = isCompleted ? "Dana Cair ke Penjual" : "Escrow Ditahan • Menunggu COD";
+
+          head.appendChild(idText);
+          head.appendChild(statusBadge);
+
+          const title = document.createElement("h3");
+          title.className = "text-sm font-extrabold text-[#1C1917]";
+          title.textContent = tx.productTitle;
+
+          const price = document.createElement("p");
+          price.className = "text-base font-extrabold text-[#C2410C]";
+          price.textContent = "Nominal Escrow: " + formatRupiah(tx.amount);
+
+          const infoBox = document.createElement("div");
+          infoBox.className = "text-xs bg-white p-3 rounded-xl border border-[#E7E0D5] space-y-1";
+
+          const l1 = document.createElement("p");
+          l1.className = "font-bold text-[#1C1917]";
+          l1.textContent = "Titik Temu: " + tx.location;
+
+          const l2 = document.createElement("p");
+          l2.className = "text-[#57534E]";
+          l2.textContent = "Jadwal: " + tx.date + " pukul " + tx.time + " WIB";
+
+          infoBox.appendChild(l1);
+          infoBox.appendChild(l2);
+
+          card.appendChild(head);
+          card.appendChild(title);
+          card.appendChild(price);
+          card.appendChild(infoBox);
+
+          if (!isCompleted) {
+            const otpBox = document.createElement("div");
+            otpBox.className = "p-3.5 rounded-xl bg-white border-2 border-dashed border-[#15803D]/50 space-y-2.5";
+
+            const topOtp = document.createElement("div");
+            topOtp.className = "flex items-center justify-between";
+
+            const lbl = document.createElement("span");
+            lbl.className = "text-xs font-extrabold text-[#1C1917]";
+            lbl.textContent = "Kode OTP 6-Digit Anda:";
+
+            const code = document.createElement("span");
+            code.className = "px-3 py-1 rounded-lg bg-green-100 text-[#15803D] font-mono text-sm font-extrabold tracking-widest";
+            code.textContent = tx.otp;
+
+            topOtp.appendChild(lbl);
+            topOtp.appendChild(code);
+
+            const form = document.createElement("form");
+            form.className = "flex gap-2";
+
+            const input = document.createElement("input");
+            input.type = "text";
+            input.maxLength = 6;
+            input.inputMode = "numeric";
+            input.placeholder = "Masukkan 6-digit OTP saat serah terima";
+            input.className = "flex-1 px-3 py-2 rounded-xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs font-mono font-bold tracking-wider";
+
+            const btn = document.createElement("button");
+            btn.type = "submit";
+            btn.className = "px-3.5 py-2 rounded-xl bg-[#15803D] hover:bg-green-800 text-white text-xs font-extrabold shrink-0";
+            btn.textContent = "Konfirmasi OTP";
+
+            form.addEventListener("submit", function (e) {
+              e.preventDefault();
+              if (input.value.trim() === tx.otp) {
+                tx.status = "SELESAI";
+                saveState();
+                updateBadges();
+                renderTransactionsList();
+                showToast(
+                  "Status: Dana Cair ke Penjual",
+                  "OTP terverifikasi! Dana " + formatRupiah(tx.amount) + " telah dicairkan ke " + tx.seller + ".",
+                  "success"
+                );
+              } else {
+                showToast("Kode OTP Salah", "Periksa kembali 6-digit kode OTP pada kartu transaksi.", "warn");
+              }
+            });
+
+            form.appendChild(input);
+            form.appendChild(btn);
+            otpBox.appendChild(topOtp);
+            otpBox.appendChild(form);
+            card.appendChild(otpBox);
+          }
+
+          container.appendChild(card);
+        });
+      }
+
+      /* -------------------------------------------------------------------
+       * 8. RENDER RIWAYAT TIKET PUSAT BANTUAN
+       * ------------------------------------------------------------------- */
+      function renderHelpTickets() {
+        const box = document.getElementById("help-tickets-history");
+        clearElement(box);
+        if (!appState.helpTickets || appState.helpTickets.length === 0) return;
+
+        const heading = document.createElement("p");
+        heading.className = "text-xs font-extrabold text-[#1C1917]";
+        heading.textContent = "Tiket Bantuan Terkirim (" + appState.helpTickets.length + "):";
+        box.appendChild(heading);
+
+        appState.helpTickets.slice(0, 3).forEach(function (tk) {
+          const item = document.createElement("div");
+          item.className = "p-2.5 rounded-xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs";
+
+          const top = document.createElement("div");
+          top.className = "flex justify-between font-extrabold text-[#15803D]";
+
+          const s1 = document.createElement("span");
+          s1.textContent = tk.id + " • " + tk.topic;
+
+          const s2 = document.createElement("span");
+          s2.textContent = "Diterima";
+
+          top.appendChild(s1);
+          top.appendChild(s2);
+
+          const msg = document.createElement("p");
+          msg.className = "text-[#57534E] mt-1 line-clamp-2";
+          msg.textContent = tk.message;
+
+          item.appendChild(top);
+          item.appendChild(msg);
+          box.appendChild(item);
+        });
+      }
+
+      /* -------------------------------------------------------------------
+       * 9. INISIALISASI EVENT LISTENERS
+       * ------------------------------------------------------------------- */
+      function syncRadiusUI(newRadius) {
+        uiState.maxRadius = Number(newRadius);
+        const label = uiState.maxRadius >= 15 ? "Semua (≤ 15 km)" : "Maks " + uiState.maxRadius + " km";
+
+        document.getElementById("radius-value-badge").textContent = label;
+        document.getElementById("mobile-header-radius").textContent =
+          uiState.maxRadius >= 15 ? "Semua" : "≤ " + uiState.maxRadius + " km";
+        document.getElementById("radius-slider").value = String(uiState.maxRadius);
+
+        document.querySelectorAll(".radius-pill").forEach(function (pill) {
+          const active = Number(pill.getAttribute("data-radius")) === uiState.maxRadius;
+          pill.className = active
+            ? "radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-[#C2410C] border border-[#C2410C] text-white transition-colors"
+            : "radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors";
+        });
+
+        renderCatalog();
+      }
+
+      function initEventListeners() {
+        // Navigation View Triggers
+        document.querySelectorAll("[data-nav-view]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            switchView(btn.getAttribute("data-nav-view"));
+          });
+        });
+
+        // Radius Controls
+        document.getElementById("radius-slider").addEventListener("input", function (e) {
+          syncRadiusUI(e.target.value);
+        });
+        document.querySelectorAll(".radius-pill").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            syncRadiusUI(btn.getAttribute("data-radius"));
+          });
+        });
+
+        // Category Tabs
+        document.querySelectorAll(".cat-tab").forEach(function (tab) {
+          tab.addEventListener("click", function () {
+            uiState.category = tab.getAttribute("data-cat");
+            document.querySelectorAll(".cat-tab").forEach(function (t) {
+              const active = t.getAttribute("data-cat") === uiState.category;
+              t.className = active
+                ? "cat-tab px-3.5 py-2 rounded-2xl text-xs font-extrabold bg-[#1C1917] text-white shrink-0 transition-colors"
+                : "cat-tab px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] shrink-0 transition-colors";
+            });
+            renderCatalog();
+          });
+        });
+
+        // Toggle Barter Only
+        const barterToggle = document.getElementById("toggle-barter-only");
+        barterToggle.addEventListener("click", function () {
+          uiState.barterOnly = !uiState.barterOnly;
+          barterToggle.className = uiState.barterOnly
+            ? "px-3.5 py-2 rounded-2xl text-xs font-extrabold bg-amber-100 border border-[#D97706] text-amber-950 shrink-0 transition-colors flex items-center gap-1.5"
+            : "px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#D97706] shrink-0 transition-colors flex items-center gap-1.5";
+          renderCatalog();
+        });
+
+        // Search & Sort
+        document.getElementById("search-input").addEventListener("input", function (e) {
+          uiState.searchQuery = e.target.value;
+          renderCatalog();
+        });
+        document.getElementById("sort-select").addEventListener("change", function (e) {
+          uiState.sortBy = e.target.value;
+          renderCatalog();
+        });
+        document.getElementById("btn-reset-filters").addEventListener("click", function () {
+          uiState.searchQuery = "";
+          document.getElementById("search-input").value = "";
+          syncRadiusUI(15);
+        });
+
+        // Close Modals
+        document.querySelectorAll("[data-close-modal]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            closeModal(btn.getAttribute("data-close-modal"));
+          });
+        });
+        ["modal-detail", "modal-chat", "modal-cod", "modal-sell", "modal-transactions"].forEach(function (mId) {
+          const el = document.getElementById(mId);
+          el.addEventListener("click", function (e) {
+            if (e.target === el) closeModal(mId);
+          });
+        });
+
+        // Detail Modal Buttons
+        document.getElementById("btn-detail-chat").addEventListener("click", function () {
+          const id = uiState.activeProductId;
+          closeModal("modal-detail");
+          openChatModal(id);
+        });
+        document.getElementById("btn-detail-cod").addEventListener("click", function () {
+          const id = uiState.activeProductId;
+          closeModal("modal-detail");
+          openCodModal(id);
+        });
+
+        // Chat Mode Switcher & Quick Discounts
+        document.querySelectorAll(".chat-mode-btn").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            setChatMode(btn.getAttribute("data-chat-mode"));
+          });
+        });
+
+        document.querySelectorAll(".quick-discount-btn").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            const product = getProductById(uiState.activeProductId);
+            if (!product) return;
+            const pct = Number(btn.getAttribute("data-discount"));
+            const discounted = Math.max(5000, Math.round((product.price * (100 - pct)) / 100 / 1000) * 1000);
+            document.getElementById("input-offer-amount").value = discounted;
+          });
+        });
+
+        // Chat Text Form
+        document.getElementById("form-chat-text").addEventListener("submit", function (e) {
+          e.preventDefault();
+          const input = document.getElementById("input-chat-text");
+          const txt = input.value.trim();
+          const product = getProductById(uiState.activeProductId);
+          if (!txt || !product) return;
+
+          ensureChatThread(product).push({ sender: "buyer", type: "text", text: txt, time: "Baru saja" });
+          input.value = "";
+          saveState();
+          renderChatMessages(product);
+          simulateSellerResponse(product, { type: "text" });
+        });
+
+        // Chat Offer Form
+        document.getElementById("form-chat-offer").addEventListener("submit", function (e) {
+          e.preventDefault();
+          const amount = Number(document.getElementById("input-offer-amount").value);
+          const product = getProductById(uiState.activeProductId);
+          if (!product || amount < 5000) return;
+
+          ensureChatThread(product).push({
+            sender: "buyer",
+            type: "offer",
+            text: "Saya menawar harga sebesar " + formatRupiah(amount) + " untuk COD langsung.",
+            time: "Baru saja"
+          });
+          saveState();
+          renderChatMessages(product);
+          simulateSellerResponse(product, { type: "offer", amount: amount });
+        });
+
+        // Chat Barter Mode Switch & Form
+        document.getElementById("select-barter-mode").addEventListener("change", function (e) {
+          const isCustom = e.target.value === "custom";
+          document.getElementById("barter-existing-wrap").classList.toggle("hidden", isCustom);
+          document.getElementById("barter-custom-wrap").classList.toggle("hidden", !isCustom);
+        });
+
+        document.getElementById("custom-barter-photo").addEventListener("change", function (e) {
+          const f = e.target.files && e.target.files[0];
+          if (f) {
+            uiState.customBarterPhotoName = f.name;
+            document.getElementById("custom-barter-photo-label").textContent = "✓ " + f.name;
+          }
+        });
+
+        document.getElementById("form-chat-barter").addEventListener("submit", function (e) {
+          e.preventDefault();
+          const product = getProductById(uiState.activeProductId);
+          if (!product) return;
+
+          const mode = document.getElementById("select-barter-mode").value;
+          const topup = Math.max(0, Number(document.getElementById("input-barter-topup").value) || 0);
+          let barterDesc = "";
+
+          if (mode === "existing") {
+            const id = document.getElementById("select-barter-item").value;
+            const found = appState.myBarterItems.find(function (b) {
+              return b.id === id;
+            });
+            barterDesc = found ? found.title : "Barang Koleksi Pembeli";
+          } else {
+            const cTitle = document.getElementById("custom-barter-title").value.trim();
+            const cCond = document.getElementById("custom-barter-cond").value.trim();
+            if (!cTitle || !cCond) {
+              showToast("Lengkapi Detail Barter", "Isi nama barang tukar dan kondisi fisiknya terlebih dahulu.", "warn");
+              return;
+            }
+            const photoTag = uiState.customBarterPhotoName ? " [Foto: " + uiState.customBarterPhotoName + "]" : "";
+            barterDesc = cTitle + " (" + cCond + ")" + photoTag;
+            appState.myBarterItems.unshift({ id: "brt-" + Date.now(), title: barterDesc, value: 150000 });
+          }
+
+          ensureChatThread(product).push({
+            sender: "buyer",
+            type: "barter",
+            text: "Saya ajukan barter dengan: \"" + barterDesc + "\" + tambahan tunai " + formatRupiah(topup) + ".",
+            time: "Baru saja"
+          });
+          saveState();
+          renderChatMessages(product);
+          simulateSellerResponse(product, { type: "barter", barterDesc: barterDesc, topup: topup });
+        });
+
+        // COD Schedule Submit
+        document.getElementById("form-cod-schedule").addEventListener("submit", function (e) {
+          e.preventDefault();
+          const product = getProductById(uiState.activeProductId);
+          if (!product) return;
+
+          const loc = document.getElementById("cod-location-select").value;
+          const dateVal = document.getElementById("cod-date").value;
+          const timeVal = document.getElementById("cod-time").value;
+          const finalPrice =
+            uiState.agreedPriceOverride !== null ? uiState.agreedPriceOverride : product.price;
+          const otpCode = generateSecureOtp();
+
+          appState.transactions.unshift({
+            id: "TX-" + Math.floor(1000 + Math.random() * 9000),
+            productId: product.id,
+            productTitle: product.title,
+            seller: product.seller,
+            amount: finalPrice,
+            location: loc,
+            date: dateVal,
+            time: timeVal,
+            otp: otpCode,
+            status: "MENUNGGU_COD"
+          });
+
+          saveState();
+          updateBadges();
+          closeModal("modal-cod");
+          renderTransactionsList();
+          openModal("modal-transactions");
+          showToast("Jadwal COD & OTP Terbit!", "Kode OTP " + otpCode + " siap digunakan saat serah terima barang.", "success");
+        });
+
+        // Open Sell Modal & Photo Validation
+        function openSellForm() {
+          uiState.sellPhotoReady = false;
+          uiState.sellPhotoDataUrl = createProductArtwork("#E7E0D5", "#D6CBB9", "BELUM ADA FOTO", "Pilih Foto Real Pict");
+          document.getElementById("sell-photo-preview").src = uiState.sellPhotoDataUrl;
+          const st = document.getElementById("sell-photo-status");
+          st.textContent = "Wajib pilih foto";
+          st.className = "px-2 py-0.5 rounded-lg bg-amber-100 text-amber-900 text-[11px] font-bold";
+          openModal("modal-sell");
+        }
+
+        document.getElementById("btn-open-sell-desktop").addEventListener("click", openSellForm);
+        document.getElementById("btn-open-sell-mobile-top").addEventListener("click", openSellForm);
+        document.getElementById("btn-about-sell").addEventListener("click", openSellForm);
+
+        document.getElementById("btn-use-sample-realpict").addEventListener("click", function () {
+          uiState.sellPhotoReady = true;
+          uiState.sellPhotoDataUrl = createProductArtwork("#C2410C", "#7C2D12", "REAL PICT VERIFIED", "Foto Asli Kamera");
+          document.getElementById("sell-photo-preview").src = uiState.sellPhotoDataUrl;
+          const st = document.getElementById("sell-photo-status");
+          st.textContent = "✓ Foto Real Pict Siap";
+          st.className = "px-2 py-0.5 rounded-lg bg-green-100 text-[#15803D] text-[11px] font-extrabold";
+        });
+
+        document.getElementById("sell-photo-input").addEventListener("change", function (e) {
+          const file = e.target.files && e.target.files[0];
+          if (!file || !file.type.startsWith("image/")) {
+            showToast("Format Tidak Valid", "Pilih berkas foto asli (JPG/PNG/WebP).", "warn");
+            return;
+          }
+          const reader = new FileReader();
+          reader.onload = function (ev) {
+            const res = ev.target && ev.target.result;
+            if (typeof res === "string" && res.startsWith("data:image/")) {
+              uiState.sellPhotoReady = true;
+              uiState.sellPhotoDataUrl = res;
+              document.getElementById("sell-photo-preview").src = res;
+              const st = document.getElementById("sell-photo-status");
+              st.textContent = "✓ Foto Real Pict Siap";
+              st.className = "px-2 py-0.5 rounded-lg bg-green-100 text-[#15803D] text-[11px] font-extrabold";
+            }
+          };
+          reader.readAsDataURL(file);
+        });
+
+        document.getElementById("form-add-product").addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          if (!uiState.sellPhotoReady) {
+            showToast("Foto Real Pict Wajib", "Unggah foto asli atau klik tombol foto kamera terverifikasi.", "warn");
+            return;
+          }
+
+          const checkedList = [];
+          document.querySelectorAll(".sell-check-item:checked").forEach(function (cb) {
+            checkedList.push(cb.value);
+          });
+
+          if (checkedList.length < 2) {
+            showToast("Checklist Kondisi Kurang", "Centang minimal 2 poin checklist kondisi fisik transparan.", "warn");
+            return;
+          }
+
+          const title = document.getElementById("sell-title").value.trim();
+          const type = document.getElementById("sell-type").value;
+          const price = Number(document.getElementById("sell-price").value);
+          const distParts = document.getElementById("sell-distance").value.split("|");
+          const score = Number(document.getElementById("sell-score").value);
+          const minus = document.getElementById("sell-minus").value.trim();
+          const desc = document.getElementById("sell-desc").value.trim();
+
+          const newItem = {
+            id: "prd-" + Date.now(),
+            title: title,
+            type: type,
+            price: price,
+            distanceKm: Number(distParts[0]) || 1.2,
+            area: distParts[1] || "Langsa Kota",
+            conditionScore: score,
+            seller: "Anda (Penjual Lokal)",
+            sellerStats: "Akun Aktif • Real Pict Verified",
+            allowOffer: document.getElementById("sell-allow-offer").checked,
+            allowBarter: document.getElementById("sell-allow-barter").checked,
+            minusNote: minus,
+            checklist: checkedList,
+            description: desc,
+            image: uiState.sellPhotoDataUrl
+          };
+
+          appState.products.unshift(newItem);
+          saveState();
+          e.target.reset();
+          closeModal("modal-sell");
+          switchView("catalog");
+          syncRadiusUI(Math.max(uiState.maxRadius, Math.ceil(newItem.distanceKm)));
+          showToast("Lungsuran Berhasil Tayang!", "\"" + title + "\" sudah tampil di katalog sekitar.", "success");
+        });
+
+        // Open Transactions Modal
+        function openTxModal() {
+          renderTransactionsList();
+          openModal("modal-transactions");
+        }
+        document.getElementById("btn-open-transactions").addEventListener("click", openTxModal);
+        document.getElementById("mob-nav-tx").addEventListener("click", openTxModal);
+
+        // FAQ Accordion
+        document.querySelectorAll(".faq-trigger").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            const item = btn.closest(".faq-item");
+            const content = item.querySelector(".faq-content");
+            const icon = item.querySelector(".faq-icon");
+            const isHidden = content.classList.contains("hidden");
+            content.classList.toggle("hidden", !isHidden);
+            icon.textContent = isHidden ? "−" : "+";
+          });
+        });
+
+        // Help Form Ticket Submission
+        document.getElementById("form-help-ticket").addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("help-name").value.trim();
+          const topic = document.getElementById("help-topic").value;
+          const txId = document.getElementById("help-tx-id").value.trim();
+          const msg = document.getElementById("help-message").value.trim();
+          if (!name || !msg) return;
+
+          const ticketId = "HLP-" + Math.floor(1000 + Math.random() * 9000);
+          appState.helpTickets = appState.helpTickets || [];
+          appState.helpTickets.unshift({
+            id: ticketId,
+            name: name,
+            topic: topic,
+            txId: txId,
+            message: msg
+          });
+
+          saveState();
+          renderHelpTickets();
+          e.target.reset();
+          showToast(
+            "Tiket Bantuan Terkirim (" + ticketId + ")",
+            "Terima kasih " + name + ", tim bantuan Lungsuran segera menindaklanjuti laporan Anda.",
+            "success"
+          );
+        });
+      }
+
+      // Jalankan Aplikasi
+      initEventListeners();
+      updateBadges();
+      renderCatalog();
+      renderHelpTickets();
+    })();
+  </script>
+</body>
+</html>
