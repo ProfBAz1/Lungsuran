@@ -78,8 +78,14 @@
     }
 
     @keyframes pulseDot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.45; transform: scale(1.22); }
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.45;
+        transform: scale(1.22);
+      }
     }
 
     .live-dot {
@@ -107,472 +113,612 @@
     }
   </style>
 </head>
-<body class="min-h-screen pb-24 lg:pb-12 selection:bg-orange-200 selection:text-orange-950">
+<body class="min-h-screen flex flex-col justify-between selection:bg-orange-200 selection:text-orange-950">
 
-  <!-- ===================================================================== -->
-  <!-- TOP NAVIGATION BAR RESPONSIF (DESKTOP & MOBILE HEADER)                -->
-  <!-- ===================================================================== -->
-  <header class="sticky top-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E7E0D5]">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
-      <!-- Brand Logo -->
-      <button type="button" data-nav-view="catalog" class="nav-link-trigger flex items-center gap-2.5 text-left focus:outline-none group shrink-0">
-        <div class="w-10 h-10 rounded-2xl bg-[#C2410C] flex items-center justify-center text-white shadow-xs group-hover:bg-[#9A3412] transition-colors">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-            <line x1="7" y1="7" x2="7.01" y2="7"></line>
-          </svg>
-        </div>
-        <div>
-          <span class="block text-lg font-extrabold tracking-tight text-[#1C1917] leading-none">Lungsuran</span>
-          <span class="block text-[11px] font-semibold text-[#57534E] mt-0.5">Preloved & Handmade Lokal</span>
-        </div>
-      </button>
-
-      <!-- Menu Navigasi Utama Desktop -->
-      <nav aria-label="Menu Utama" class="hidden lg:flex items-center gap-1 bg-white/80 p-1 rounded-2xl border border-[#E7E0D5]">
-        <button type="button" data-nav-view="catalog" class="main-nav-btn px-3.5 py-2 rounded-xl text-xs font-extrabold bg-[#1C1917] text-white transition-colors">
-          Katalog Barang
-        </button>
-        <button type="button" data-nav-view="about" class="main-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold text-[#57534E] hover:text-[#1C1917] transition-colors">
-          Tentang Kami
-        </button>
-        <button type="button" data-nav-view="guide" class="main-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold text-[#57534E] hover:text-[#1C1917] transition-colors">
-          Panduan Aman
-        </button>
-        <button type="button" data-nav-view="help" class="main-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold text-[#57534E] hover:text-[#1C1917] transition-colors">
-          Pusat Bantuan
-        </button>
-      </nav>
-
-      <!-- Desktop Action Buttons -->
-      <div class="hidden sm:flex items-center gap-2">
-        <button type="button" id="btn-open-transactions" class="px-3.5 py-2.5 rounded-2xl text-xs font-extrabold bg-white border border-[#E7E0D5] text-[#1C1917] hover:border-[#15803D] transition-colors flex items-center gap-2">
-          <svg class="w-4 h-4 text-[#15803D]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            <polyline points="9 12 11 14 15 10"></polyline>
-          </svg>
-          <span>COD & OTP</span>
-          <span id="badge-tx-desktop" class="px-2 py-0.5 text-[11px] font-extrabold bg-green-100 text-[#15803D] rounded-full">1</span>
-        </button>
-
-        <button type="button" id="btn-open-sell-desktop" class="px-4 py-2.5 rounded-2xl text-xs font-extrabold bg-[#C2410C] hover:bg-[#9A3412] text-white shadow-xs transition-all flex items-center gap-1.5">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-          <span>Pasang Lungsuran</span>
-        </button>
-      </div>
-
-      <!-- Mobile Quick Radius & Menu Button -->
-      <div class="flex sm:hidden items-center gap-2">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-2xl bg-white border border-[#E7E0D5] text-[11px] font-bold text-[#1C1917]">
-          <span class="w-2 h-2 rounded-full bg-[#15803D] live-dot"></span>
-          <span id="mobile-header-radius">≤ 5 km</span>
-        </span>
-        <button type="button" id="btn-open-sell-mobile-top" class="px-3 py-1.5 rounded-2xl bg-[#C2410C] text-white text-xs font-extrabold">
-          + Pasang
-        </button>
-      </div>
-    </div>
-
-    <!-- Sub-Navigation Bar untuk Layar Tablet/Mobile (Akses Cepat 4 Halaman Utama) -->
-    <div class="lg:hidden border-t border-[#E7E0D5]/80 bg-[#FAF7F2] px-4 py-2 overflow-x-auto no-scrollbar">
-      <div class="flex items-center gap-1.5 min-w-max">
-        <button type="button" data-nav-view="catalog" class="main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-extrabold bg-[#1C1917] text-white">
-          Katalog Barang
-        </button>
-        <button type="button" data-nav-view="about" class="main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E]">
-          Tentang Kami
-        </button>
-        <button type="button" data-nav-view="guide" class="main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E]">
-          Panduan Aman
-        </button>
-        <button type="button" data-nav-view="help" class="main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E]">
-          Pusat Bantuan / Help
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- ===================================================================== -->
-  <!-- VIEW 1: HALAMAN KATALOG BARANG (BERANDA INTERAKTIF)                   -->
-  <!-- ===================================================================== -->
-  <main id="view-catalog" class="app-view max-w-6xl mx-auto px-4 sm:px-6 pt-5 space-y-5">
-
-    <!-- BANNER INFORMASI SINGKAT TUJUAN & MANFAAT LUNGSURAN -->
-    <section aria-label="Informasi Singkat Lungsuran" class="bg-gradient-to-r from-[#FFF7ED] via-white to-[#F0FDF4] rounded-2xl border border-[#E7E0D5] p-4 sm:p-5 shadow-2xs">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div class="space-y-1.5 max-w-2xl">
-          <div class="flex flex-wrap items-center gap-2">
-            <span class="px-2.5 py-0.5 rounded-xl bg-[#C2410C]/10 text-[#C2410C] text-[11px] font-extrabold uppercase tracking-wider">
-              Ekonomi Sirkular & Kriya Tetangga
-            </span>
-            <span class="px-2.5 py-0.5 rounded-xl bg-green-100 text-[#15803D] text-[11px] font-bold">
-              100% Real Pict • COD OTP Escrow
-            </span>
+  <div>
+    <!-- ===================================================================== -->
+    <!-- TOP NAVIGATION BAR RESPONSIF (DESKTOP & MOBILE HEADER)                -->
+    <!-- ===================================================================== -->
+    <header class="sticky top-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#E7E0D5]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+        <!-- Brand Logo -->
+        <button type="button" data-nav-view="catalog" class="nav-link-trigger flex items-center gap-2.5 text-left focus:outline-none group shrink-0">
+          <div class="w-10 h-10 rounded-2xl bg-[#C2410C] flex items-center justify-center text-white shadow-xs group-hover:bg-[#9A3412] transition-colors">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+              <line x1="7" y1="7" x2="7.01" y2="7"></line>
+            </svg>
           </div>
-          <h1 class="text-lg sm:text-xl font-extrabold text-[#1C1917] leading-snug">
-            Beri Nyawa Kedua untuk Barang Terawat & Dukung Karya Handmade Sekitar
-          </h1>
-          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-            <strong>Tujuan & Manfaat:</strong> Mengurangi limbah barang layak pakai, menghemat pengeluaran lewat sistem tawar & barter transparan, serta memudahkan transaksi tatap muka aman tanpa ongkos kirim mahal.
-          </p>
+          <div>
+            <span class="block text-lg font-extrabold tracking-tight text-[#1C1917] leading-none">Lungsuran</span>
+            <span class="block text-[11px] font-semibold text-[#57534E] mt-0.5">Preloved & Handmade Lokal</span>
+          </div>
+        </button>
+
+        <!-- Menu Navigasi Utama Desktop -->
+        <nav aria-label="Menu Utama" class="hidden lg:flex items-center gap-1 bg-white/80 p-1 rounded-2xl border border-[#E7E0D5]">
+          <button type="button" data-nav-view="catalog" class="main-nav-btn px-3.5 py-2 rounded-xl text-xs font-extrabold bg-[#1C1917] text-white transition-colors">
+            Katalog Barang
+          </button>
+          <button type="button" data-nav-view="about" class="main-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold text-[#57534E] hover:text-[#1C1917] transition-colors">
+            Tentang Kami
+          </button>
+          <button type="button" data-nav-view="guide" class="main-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold text-[#57534E] hover:text-[#1C1917] transition-colors">
+            Panduan Aman
+          </button>
+          <button type="button" data-nav-view="help" class="main-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold text-[#57534E] hover:text-[#1C1917] transition-colors">
+            Pusat Bantuan
+          </button>
+        </nav>
+
+        <!-- Desktop Action Buttons -->
+        <div class="hidden sm:flex items-center gap-2">
+          <button type="button" id="btn-open-transactions" class="px-3.5 py-2.5 rounded-2xl text-xs font-extrabold bg-white border border-[#E7E0D5] text-[#1C1917] hover:border-[#15803D] transition-colors flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#15803D]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+            <span>COD & OTP</span>
+            <span id="badge-tx-desktop" class="px-2 py-0.5 text-[11px] font-extrabold bg-green-100 text-[#15803D] rounded-full">1</span>
+          </button>
+
+          <button type="button" id="btn-open-sell-desktop" class="px-4 py-2.5 rounded-2xl text-xs font-extrabold bg-[#C2410C] hover:bg-[#9A3412] text-white shadow-xs transition-all flex items-center gap-1.5">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>Pasang Lungsuran</span>
+          </button>
         </div>
 
-        <div class="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0">
-          <button type="button" data-nav-view="guide" class="nav-link-trigger px-3.5 py-2.5 rounded-2xl bg-white border border-[#E7E0D5] hover:border-[#C2410C] text-xs font-extrabold text-[#1C1917] transition-colors">
-            Cara Kerja COD OTP
+        <!-- Mobile Quick Radius & Menu Button -->
+        <div class="flex sm:hidden items-center gap-2">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-2xl bg-white border border-[#E7E0D5] text-[11px] font-bold text-[#1C1917]">
+            <span class="w-2 h-2 rounded-full bg-[#15803D] live-dot"></span>
+            <span id="mobile-header-radius">≤ 5 km</span>
+          </span>
+          <button type="button" id="btn-open-sell-mobile-top" class="px-3 py-1.5 rounded-2xl bg-[#C2410C] text-white text-xs font-extrabold">
+            + Pasang
           </button>
-          <button type="button" data-nav-view="about" class="nav-link-trigger px-3.5 py-2.5 rounded-2xl bg-[#1C1917] hover:bg-stone-800 text-white text-xs font-extrabold transition-colors">
-            Tentang Lungsuran →
+        </div>
+      </div>
+
+      <!-- Sub-Navigation Bar untuk Layar Tablet/Mobile -->
+      <div class="lg:hidden border-t border-[#E7E0D5]/80 bg-[#FAF7F2] px-4 py-2 overflow-x-auto no-scrollbar">
+        <div class="flex items-center gap-1.5 min-w-max">
+          <button type="button" data-nav-view="catalog" class="main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-extrabold bg-[#1C1917] text-white">
+            Katalog Barang
+          </button>
+          <button type="button" data-nav-view="about" class="main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E]">
+            Tentang Kami
+          </button>
+          <button type="button" data-nav-view="guide" class="main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E]">
+            Panduan Aman
+          </button>
+          <button type="button" data-nav-view="help" class="main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E]">
+            Pusat Bantuan / Help
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================================================================== -->
+    <!-- VIEW 1: HALAMAN KATALOG BARANG (BERANDA INTERAKTIF)                   -->
+    <!-- ===================================================================== -->
+    <main id="view-catalog" class="app-view max-w-6xl mx-auto px-4 sm:px-6 pt-5 space-y-5">
+
+      <!-- BANNER INFORMASI SINGKAT TUJUAN & MANFAAT LUNGSURAN -->
+      <section aria-label="Informasi Singkat Lungsuran" class="bg-gradient-to-r from-[#FFF7ED] via-white to-[#F0FDF4] rounded-2xl border border-[#E7E0D5] p-4 sm:p-5 shadow-2xs">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="space-y-1.5 max-w-2xl">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-xl bg-[#C2410C]/10 text-[#C2410C] text-[11px] font-extrabold uppercase tracking-wider">
+                Ekonomi Sirkular & Kriya Tetangga
+              </span>
+              <span class="px-2.5 py-0.5 rounded-xl bg-green-100 text-[#15803D] text-[11px] font-bold">
+                100% Real Pict • COD OTP Escrow
+              </span>
+            </div>
+            <h1 class="text-lg sm:text-xl font-extrabold text-[#1C1917] leading-snug">
+              Beri Nyawa Kedua untuk Barang Terawat & Dukung Karya Handmade Sekitar
+            </h1>
+            <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+              <strong>Tujuan & Manfaat:</strong> Mengurangi limbah barang layak pakai, menghemat pengeluaran lewat sistem tawar & barter transparan, serta memudahkan transaksi tatap muka aman tanpa ongkos kirim mahal.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0">
+            <button type="button" data-nav-view="guide" class="nav-link-trigger px-3.5 py-2.5 rounded-2xl bg-white border border-[#E7E0D5] hover:border-[#C2410C] text-xs font-extrabold text-[#1C1917] transition-colors">
+              Cara Kerja COD OTP
+            </button>
+            <button type="button" data-nav-view="about" class="nav-link-trigger px-3.5 py-2.5 rounded-2xl bg-[#1C1917] hover:bg-stone-800 text-white text-xs font-extrabold transition-colors">
+              Tentang Lungsuran →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANEL FILTER RADIUS TERDEKAT (HYPERLOCAL) & PENCARIAN -->
+      <section aria-label="Filter Radius Terdekat dan Pencarian" class="bg-white rounded-2xl border border-[#E7E0D5] p-4 sm:p-5 shadow-2xs space-y-4">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+          <!-- Pencarian Kata Kunci -->
+          <div class="lg:col-span-5">
+            <label for="search-input" class="block text-xs font-extrabold text-[#1C1917] mb-1.5">
+              Cari Barang Preloved atau Handmade
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-3.5 flex items-center text-[#78716C]">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <input id="search-input" type="search" maxlength="60" placeholder="Ketik kamera, keramik, jaket, lokasi..." class="w-full pl-10 pr-4 py-2.5 bg-[#FAF7F2] border border-[#E7E0D5] rounded-2xl text-sm text-[#1C1917] placeholder-[#78716C] focus:outline-none focus:border-[#C2410C] focus:bg-white transition-all">
+            </div>
+          </div>
+
+          <!-- Kontrol Slider & Tombol Cepat Radius Kilometer -->
+          <div class="lg:col-span-7 bg-[#FAF7F2] rounded-2xl border border-[#E7E0D5] p-3.5">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <div class="flex items-center gap-1.5 text-xs font-extrabold text-[#1C1917]">
+                <svg class="w-4 h-4 text-[#C2410C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Filter Radius Terdekat (Hyperlocal)</span>
+              </div>
+              <span id="radius-value-badge" class="px-2.5 py-1 rounded-xl bg-[#C2410C] text-white text-xs font-extrabold">
+                Maks 5 km
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
+              <div class="sm:col-span-6">
+                <input id="radius-slider" type="range" min="1" max="15" step="1" value="5" aria-label="Geser batas radius kilometer" class="w-full warm-range">
+                <div class="flex justify-between text-[10px] font-bold text-[#78716C] mt-1">
+                  <span>1 km</span>
+                  <span>3 km</span>
+                  <span>5 km</span>
+                  <span>10 km</span>
+                  <span>Semua</span>
+                </div>
+              </div>
+
+              <div class="sm:col-span-6 flex flex-wrap gap-1.5 sm:justify-end">
+                <button type="button" data-radius="1" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors">1 km</button>
+                <button type="button" data-radius="3" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors">3 km</button>
+                <button type="button" data-radius="5" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-[#C2410C] border border-[#C2410C] text-white transition-colors">5 km</button>
+                <button type="button" data-radius="10" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors">10 km</button>
+                <button type="button" data-radius="15" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors">Semua</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bar Kategori, Filter Barter & Urutan -->
+        <div class="pt-3 border-t border-[#F3EDE2] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0">
+            <button type="button" data-cat="all" class="cat-tab px-3.5 py-2 rounded-2xl text-xs font-extrabold bg-[#1C1917] text-white shrink-0 transition-colors">
+              Semua Kategori
+            </button>
+            <button type="button" data-cat="Preloved" class="cat-tab px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] shrink-0 transition-colors">
+              Preloved
+            </button>
+            <button type="button" data-cat="Handmade" class="cat-tab px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] shrink-0 transition-colors">
+              Handmade
+            </button>
+            <button type="button" id="toggle-barter-only" class="px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#D97706] shrink-0 transition-colors flex items-center gap-1.5">
+              <span class="text-[#D97706] font-black">⇄</span>
+              <span>Bisa Barter</span>
+            </button>
+          </div>
+
+          <div class="flex items-center justify-between sm:justify-end gap-3">
+            <span id="catalog-count-label" class="text-xs font-bold text-[#57534E]">Menampilkan 6 barang</span>
+            <select id="sort-select" aria-label="Urutkan katalog" class="px-3 py-2 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs font-bold text-[#1C1917] focus:outline-none focus:border-[#C2410C]">
+              <option value="nearest">Urut: Terdekat (km)</option>
+              <option value="cheapest">Urut: Harga Termurah</option>
+              <option value="condition">Urut: Kondisi Tertinggi (%)</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- GRID KATALOG PRODUK -->
+      <section aria-label="Daftar Produk">
+        <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Kartu produk di-render 100% aman via document.createElement & textContent -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="catalog-empty" class="hidden bg-white rounded-2xl border border-[#E7E0D5] p-10 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-orange-50 text-[#C2410C] flex items-center justify-center mx-auto mb-3 font-extrabold text-xl">
+            ?
+          </div>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Tidak ada barang ditemukan pada radius ini</h2>
+          <p class="text-xs sm:text-sm text-[#57534E] max-w-md mx-auto mt-1">
+            Perlebar jarak radius kilometer atau atur ulang kata kunci pencarian untuk melihat barang dari lingkungan sekitar.
+          </p>
+          <button type="button" id="btn-reset-filters" class="mt-4 px-5 py-2.5 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-white text-xs font-extrabold transition-colors">
+            Tampilkan Semua Jarak (15 km)
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- VIEW 2: HALAMAN TENTANG KAMI (TUJUAN, EKONOMI SIRKULAR & NILAI)       -->
+    <!-- ===================================================================== -->
+    <section id="view-about" class="app-view hidden max-w-5xl mx-auto px-4 sm:px-6 pt-6 space-y-6 animate-fade-up">
+      <div class="bg-white rounded-2xl border border-[#E7E0D5] p-6 sm:p-8 shadow-2xs space-y-4">
+        <span class="inline-block px-3 py-1 rounded-xl bg-orange-100 text-[#C2410C] text-xs font-extrabold">
+          Tentang Lungsuran
+        </span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-[#1C1917] leading-tight">
+          Menghubungkan Warga Lokal Lewat Barang Bermakna & Kejujuran Kondisi
+        </h1>
+        <p class="text-sm sm:text-base text-[#57534E] leading-relaxed">
+          <strong>Lungsuran</strong> lahir dari kebiasaan baik masyarakat Indonesia mewariskan barang layak pakai kepada kerabat atau tetangga terdekat. Kami membangun ruang transaksi Consumer-to-Consumer (C2C) hiper-lokal agar barang preloved berkualitas tidak menumpuk menjadi limbah, sekaligus memberi panggung bagi perajin handmade skala rumahan.
+        </p>
+      </div>
+
+      <!-- 3 Pilar Manfaat Utama -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <article class="bg-white rounded-2xl border border-[#E7E0D5] p-5 space-y-2.5">
+          <div class="w-10 h-10 rounded-2xl bg-green-100 text-[#15803D] flex items-center justify-center font-extrabold">
+            01
+          </div>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Ekonomi Sirkular Hiper-Lokal</h2>
+          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+            Memperpanjang usia pakai barang elektronik, buku, pakaian, hingga perabot rumah tangga dalam radius dekat (1–10 km) tanpa jejak karbon pengiriman jarak jauh.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-2xl border border-[#E7E0D5] p-5 space-y-2.5">
+          <div class="w-10 h-10 rounded-2xl bg-amber-100 text-[#D97706] flex items-center justify-center font-extrabold">
+            02
+          </div>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Dukungan Kreator Handmade</h2>
+          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+            Membantu pengrajin keramik, rajutan, kayu, dan aksesori skala kecil memasarkan karya buatan tangan langsung ke pembeli di kota yang sama.
+          </p>
+        </article>
+
+        <article class="bg-white rounded-2xl border border-[#E7E0D5] p-5 space-y-2.5">
+          <div class="w-10 h-10 rounded-2xl bg-orange-100 text-[#C2410C] flex items-center justify-center font-extrabold">
+            03
+          </div>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Nilai Transparansi Radikal</h2>
+          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+            Penjual wajib mengisi persentase kondisi fisik, mengakui bagian minus secara jujur di awal, serta melampirkan foto asli kamera tanpa filter berlebihan.
+          </p>
+        </article>
+      </div>
+
+      <div class="bg-[#1C1917] text-white rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h3 class="text-lg font-extrabold">Punya barang terawat atau karya handmade?</h3>
+          <p class="text-xs sm:text-sm text-stone-300 mt-1">Tayangkan gratis dan temukan pembeli atau rekan barter di sekitar Anda hari ini.</p>
+        </div>
+        <div class="flex gap-2.5 shrink-0">
+          <button type="button" data-nav-view="catalog" class="nav-link-trigger px-4 py-2.5 rounded-2xl bg-white/10 hover:bg-white/20 text-xs font-extrabold">
+            Jelajahi Katalog
+          </button>
+          <button type="button" id="btn-about-sell" class="px-4 py-2.5 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-xs font-extrabold">
+            + Pasang Lungsuran
           </button>
         </div>
       </div>
     </section>
 
-    <!-- PANEL FILTER RADIUS TERDEKAT (HYPERLOCAL) & PENCARIAN -->
-    <section aria-label="Filter Radius Terdekat dan Pencarian" class="bg-white rounded-2xl border border-[#E7E0D5] p-4 sm:p-5 shadow-2xs space-y-4">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
-        <!-- Pencarian Kata Kunci -->
-        <div class="lg:col-span-5">
-          <label for="search-input" class="block text-xs font-extrabold text-[#1C1917] mb-1.5">
-            Cari Barang Preloved atau Handmade
-          </label>
-          <div class="relative">
-            <span class="absolute inset-y-0 left-3.5 flex items-center text-[#78716C]">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </span>
-            <input id="search-input" type="search" maxlength="60" placeholder="Ketik kamera, keramik, jaket, lokasi..." class="w-full pl-10 pr-4 py-2.5 bg-[#FAF7F2] border border-[#E7E0D5] rounded-2xl text-sm text-[#1C1917] placeholder-[#78716C] focus:outline-none focus:border-[#C2410C] focus:bg-white transition-all">
+    <!-- ===================================================================== -->
+    <!-- VIEW 3: HALAMAN PANDUAN AMAN (LANGKAH TRANSAKSI, FISIK & COD OTP)     -->
+    <!-- ===================================================================== -->
+    <section id="view-guide" class="app-view hidden max-w-5xl mx-auto px-4 sm:px-6 pt-6 space-y-6 animate-fade-up">
+      <div class="bg-white rounded-2xl border border-[#E7E0D5] p-6 sm:p-8 shadow-2xs">
+        <span class="inline-block px-3 py-1 rounded-xl bg-green-100 text-[#15803D] text-xs font-extrabold mb-2">
+          Panduan Keamanan Transaksi
+        </span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-[#1C1917]">
+          4 Langkah Jual-Beli & Barter Aman di Lungsuran
+        </h1>
+        <p class="text-xs sm:text-sm text-[#57534E] mt-2">
+          Ikuti standar keselamatan komunitas agar setiap serah terima barang berjalan nyaman tanpa risiko penipuan.
+        </p>
+
+        <!-- 4 Step Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+          <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
+            <span class="text-xs font-extrabold text-[#C2410C]">LANGKAH 1</span>
+            <h2 class="text-base font-extrabold text-[#1C1917]">Periksa Checklist & Foto Real Pict</h2>
+            <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+              Baca persentase kondisi (misal 92% mulus) dan catatan minus jujur penjual sebelum menawar. Pastikan foto menampilkan detail fisik asli.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
+            <span class="text-xs font-extrabold text-[#D97706]">LANGKAH 2</span>
+            <h2 class="text-base font-extrabold text-[#1C1917]">Negosiasi Harga atau Ajukan Barter</h2>
+            <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+              Gunakan fitur chat bawaan untuk mengajukan tawaran harga wajar atau menukar dengan barang milik Anda (disertai foto & deskripsi kondisi).
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
+            <span class="text-xs font-extrabold text-[#15803D]">LANGKAH 3</span>
+            <h2 class="text-base font-extrabold text-[#1C1917]">Pilih Titik Temu Publik (Safe Meetup)</h2>
+            <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+              Selalu jadwalkan COD di area ramai ber-CCTV seperti minimarket (Indomaret/Alfamart), pos satpam kampus, atau taman kota pada siang/sore hari.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
+            <span class="text-xs font-extrabold text-[#15803D]">LANGKAH 4</span>
+            <h2 class="text-base font-extrabold text-[#1C1917]">Cek Fisik & Konfirmasi 6-Digit OTP</h2>
+            <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
+              Uji fungsi barang saat bertemu. Jika sudah sesuai checklist, masukkan kode OTP 6-digit pada menu <strong>COD & OTP</strong> agar dana escrow cair ke penjual.
+            </p>
           </div>
         </div>
+      </div>
 
-        <!-- Kontrol Slider & Tombol Cepat Radius Kilometer -->
-        <div class="lg:col-span-7 bg-[#FAF7F2] rounded-2xl border border-[#E7E0D5] p-3.5">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <div class="flex items-center gap-1.5 text-xs font-extrabold text-[#1C1917]">
-              <svg class="w-4 h-4 text-[#C2410C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <span>Filter Radius Terdekat (Hyperlocal)</span>
-            </div>
-            <span id="radius-value-badge" class="px-2.5 py-1 rounded-xl bg-[#C2410C] text-white text-xs font-extrabold">
-              Maks 5 km
+      <!-- Tips Cek Fisik Barang -->
+      <div class="bg-white rounded-2xl border border-[#E7E0D5] p-6 space-y-3">
+        <h2 class="text-lg font-extrabold text-[#1C1917]">Daftar Periksa Cepat Saat Bertemu COD</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-[#1C1917]">
+          <li class="p-3 rounded-2xl bg-green-50/70 border border-green-200 font-medium">✓ Cocokkan fisik barang dengan catatan minus penjual di aplikasi.</li>
+          <li class="p-3 rounded-2xl bg-green-50/70 border border-green-200 font-medium">✓ Tes tombol, baterai, resleting, atau kelengkapan sebelum input OTP.</li>
+          <li class="p-3 rounded-2xl bg-amber-50/70 border border-amber-200 font-medium">! Jangan pernah membagikan kode OTP lewat chat sebelum barang di tangan Anda.</li>
+          <li class="p-3 rounded-2xl bg-amber-50/70 border border-amber-200 font-medium">! Hindari lokasi pertemuan sepi atau transaksi di luar sistem escrow OTP.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- VIEW 4: HALAMAN PUSAT BANTUAN / HELP (FAQ ACCORDION & FORM PENGADUAN) -->
+    <!-- ===================================================================== -->
+    <section id="view-help" class="app-view hidden max-w-5xl mx-auto px-4 sm:px-6 pt-6 space-y-6 animate-fade-up">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Kolom Kiri: FAQ Interaktif Accordion -->
+        <div class="lg:col-span-7 bg-white rounded-2xl border border-[#E7E0D5] p-5 sm:p-6 space-y-4">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-xl bg-amber-100 text-amber-900 text-xs font-extrabold mb-1.5">
+              Pusat Bantuan & FAQ
             </span>
+            <h1 class="text-xl sm:text-2xl font-extrabold text-[#1C1917]">Pertanyaan yang Sering Diajukan</h1>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
-            <div class="sm:col-span-6">
-              <input id="radius-slider" type="range" min="1" max="15" step="1" value="5" aria-label="Geser batas radius kilometer" class="w-full warm-range">
-              <div class="flex justify-between text-[10px] font-bold text-[#78716C] mt-1">
-                <span>1 km</span>
-                <span>3 km</span>
-                <span>5 km</span>
-                <span>10 km</span>
-                <span>Semua</span>
+          <div id="faq-accordion" class="space-y-2.5">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item rounded-2xl border border-[#E7E0D5] bg-[#FAF7F2] overflow-hidden">
+              <button type="button" class="faq-trigger w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-[#1C1917]">
+                <span>Bagaimana cara kerja sistem Escrow Kode OTP saat COD?</span>
+                <span class="faq-icon text-[#C2410C] font-black text-base">+</span>
+              </button>
+              <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-[#57534E] leading-relaxed border-t border-[#E7E0D5]/60 pt-2.5">
+                Saat jadwal COD dikunci, pembeli mendapat kode OTP 6-digit unik sementara dana ditahan aman di sistem escrow. Ketika bertemu di titik publik dan fisik barang sudah dicek sesuai deskripsi, pembeli mengonfirmasi kode OTP tersebut sehingga status berubah menjadi <strong>Dana Cair ke Penjual</strong>.
               </div>
             </div>
 
-            <div class="sm:col-span-6 flex flex-wrap gap-1.5 sm:justify-end">
-              <button type="button" data-radius="1" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors">1 km</button>
-              <button type="button" data-radius="3" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors">3 km</button>
-              <button type="button" data-radius="5" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-[#C2410C] border border-[#C2410C] text-white transition-colors">5 km</button>
-              <button type="button" data-radius="10" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors">10 km</button>
-              <button type="button" data-radius="15" class="radius-pill px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] transition-colors">Semua</button>
+            <!-- FAQ Item 2 -->
+            <div class="faq-item rounded-2xl border border-[#E7E0D5] bg-[#FAF7F2] overflow-hidden">
+              <button type="button" class="faq-trigger w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-[#1C1917]">
+                <span>Apakah boleh barter barang ditambah uang tunai?</span>
+                <span class="faq-icon text-[#C2410C] font-black text-base">+</span>
+              </button>
+              <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-[#57534E] leading-relaxed border-t border-[#E7E0D5]/60 pt-2.5">
+                Bisa! Di dalam modal chat produk, pilih tab <strong>Ajukan Barter</strong>. Anda dapat menuliskan detail barang tukar beserta kondisi/foto real pict, lalu menambahkan nominal selisih tunai jika nilai barang berbeda.
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item rounded-2xl border border-[#E7E0D5] bg-[#FAF7F2] overflow-hidden">
+              <button type="button" class="faq-trigger w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-[#1C1917]">
+                <span>Mengapa wajib mengisi catatan minus dan foto tanpa filter?</span>
+                <span class="faq-icon text-[#C2410C] font-black text-base">+</span>
+              </button>
+              <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-[#57534E] leading-relaxed border-t border-[#E7E0D5]/60 pt-2.5">
+                Untuk mencegah pembatalan sepihak saat bertemu COD. Kejujuran kondisi fisik sejak awal membuat pembeli dan penjual sama-sama hemat waktu dan saling percaya.
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item rounded-2xl border border-[#E7E0D5] bg-[#FAF7F2] overflow-hidden">
+              <button type="button" class="faq-trigger w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-[#1C1917]">
+                <span>Bagaimana jika barang tidak sesuai saat ketemuan COD?</span>
+                <span class="faq-icon text-[#C2410C] font-black text-base">+</span>
+              </button>
+              <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-[#57534E] leading-relaxed border-t border-[#E7E0D5]/60 pt-2.5">
+                Jangan masukkan atau berikan kode OTP 6-digit Anda. Batalkan serah terima di lokasi publik tersebut dan laporkan detail transaksi melalui formulir bantuan di samping.
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Bar Kategori, Filter Barter & Urutan -->
-      <div class="pt-3 border-t border-[#F3EDE2] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0">
-          <button type="button" data-cat="all" class="cat-tab px-3.5 py-2 rounded-2xl text-xs font-extrabold bg-[#1C1917] text-white shrink-0 transition-colors">
-            Semua Kategori
-          </button>
-          <button type="button" data-cat="Preloved" class="cat-tab px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] shrink-0 transition-colors">
-            Preloved
-          </button>
-          <button type="button" data-cat="Handmade" class="cat-tab px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] shrink-0 transition-colors">
-            Handmade
-          </button>
-          <button type="button" id="toggle-barter-only" class="px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#D97706] shrink-0 transition-colors flex items-center gap-1.5">
-            <span class="text-[#D97706] font-black">⇄</span>
-            <span>Bisa Barter</span>
-          </button>
-        </div>
+        <!-- Kolom Kanan: Formulir Pengaduan / Bantuan Langsung -->
+        <div class="lg:col-span-5 bg-white rounded-2xl border border-[#E7E0D5] p-5 sm:p-6 space-y-4">
+          <div>
+            <h2 class="text-lg font-extrabold text-[#1C1917]">Minta Bantuan / Laporan Kendala</h2>
+            <p class="text-xs text-[#57534E] mt-0.5">Tim moderator komunitas siap membantu kendala COD, sengketa kondisi barang, atau saran fitur.</p>
+          </div>
 
-        <div class="flex items-center justify-between sm:justify-end gap-3">
-          <span id="catalog-count-label" class="text-xs font-bold text-[#57534E]">Menampilkan 6 barang</span>
-          <select id="sort-select" aria-label="Urutkan katalog" class="px-3 py-2 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs font-bold text-[#1C1917] focus:outline-none focus:border-[#C2410C]">
-            <option value="nearest">Urut: Terdekat (km)</option>
-            <option value="cheapest">Urut: Harga Termurah</option>
-            <option value="condition">Urut: Kondisi Tertinggi (%)</option>
-          </select>
+          <form id="form-help-ticket" class="space-y-3">
+            <div>
+              <label for="help-name" class="block text-xs font-extrabold text-[#1C1917] mb-1">Nama Lengkap *</label>
+              <input id="help-name" type="text" maxlength="60" required placeholder="Masukkan nama Anda" class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm">
+            </div>
+
+            <div>
+              <label for="help-topic" class="block text-xs font-extrabold text-[#1C1917] mb-1">Kategori Bantuan *</label>
+              <select id="help-topic" class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm font-semibold">
+                <option value="Kendala Jadwal COD / OTP">Kendala Jadwal COD / OTP</option>
+                <option value="Laporan Kondisi Barang Tidak Sesuai">Laporan Kondisi Barang Tidak Sesuai</option>
+                <option value="Pertanyaan Sistem Barter">Pertanyaan Sistem Barter</option>
+                <option value="Saran Pengembangan Lungsuran">Saran Pengembangan Lungsuran</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="help-tx-id" class="block text-xs font-extrabold text-[#1C1917] mb-1">ID Transaksi COD (Opsional)</label>
+              <input id="help-tx-id" type="text" maxlength="25" placeholder="Contoh: TX-8841" class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm">
+            </div>
+
+            <div>
+              <label for="help-message" class="block text-xs font-extrabold text-[#1C1917] mb-1">Detail Pesan atau Kronologi *</label>
+              <textarea id="help-message" rows="3" maxlength="300" required placeholder="Jelaskan pertanyaan atau kendala Anda secara singkat..." class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3 px-4 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-white text-sm font-extrabold transition-colors">
+              Kirim Tiket Bantuan
+            </button>
+          </form>
+
+          <!-- Riwayat Tiket Bantuan Pengguna -->
+          <div id="help-tickets-history" class="pt-3 border-t border-[#E7E0D5] space-y-2">
+            <!-- Di-render aman dengan textContent -->
+          </div>
         </div>
       </div>
     </section>
-
-    <!-- GRID KATALOG PRODUK -->
-    <section aria-label="Daftar Produk">
-      <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- Kartu produk di-render 100% aman via document.createElement & textContent -->
-      </div>
-
-      <!-- Empty State -->
-      <div id="catalog-empty" class="hidden bg-white rounded-2xl border border-[#E7E0D5] p-10 text-center">
-        <div class="w-14 h-14 rounded-2xl bg-orange-50 text-[#C2410C] flex items-center justify-center mx-auto mb-3 font-extrabold text-xl">
-          ?
-        </div>
-        <h2 class="text-base font-extrabold text-[#1C1917]">Tidak ada barang ditemukan pada radius ini</h2>
-        <p class="text-xs sm:text-sm text-[#57534E] max-w-md mx-auto mt-1">
-          Perlebar jarak radius kilometer atau atur ulang kata kunci pencarian untuk melihat barang dari lingkungan sekitar.
-        </p>
-        <button type="button" id="btn-reset-filters" class="mt-4 px-5 py-2.5 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-white text-xs font-extrabold transition-colors">
-          Tampilkan Semua Jarak (15 km)
-        </button>
-      </div>
-    </section>
-  </main>
+  </div>
 
   <!-- ===================================================================== -->
-  <!-- VIEW 2: HALAMAN TENTANG KAMI (TUJUAN, EKONOMI SIRKULAR & NILAI)       -->
+  <!-- FOOTER UTAMA LUNGSURAN (WARM DARK INK & TERRACOTTA ACCENTS)           -->
   <!-- ===================================================================== -->
-  <section id="view-about" class="app-view hidden max-w-5xl mx-auto px-4 sm:px-6 pt-6 space-y-6 animate-fade-up">
-    <div class="bg-white rounded-2xl border border-[#E7E0D5] p-6 sm:p-8 shadow-2xs space-y-4">
-      <span class="inline-block px-3 py-1 rounded-xl bg-orange-100 text-[#C2410C] text-xs font-extrabold">
-        Tentang Lungsuran
-      </span>
-      <h1 class="text-2xl sm:text-3xl font-extrabold text-[#1C1917] leading-tight">
-        Menghubungkan Warga Lokal Lewat Barang Bermakna & Kejujuran Kondisi
-      </h1>
-      <p class="text-sm sm:text-base text-[#57534E] leading-relaxed">
-        <strong>Lungsuran</strong> lahir dari kebiasaan baik masyarakat Indonesia mewariskan barang layak pakai kepada kerabat atau tetangga terdekat. Kami membangun ruang transaksi Consumer-to-Consumer (C2C) hiper-lokal agar barang preloved berkualitas tidak menumpuk menjadi limbah, sekaligus memberi panggung bagi perajin handmade skala rumahan.
-      </p>
-    </div>
-
-    <!-- 3 Pilar Manfaat Utama -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <article class="bg-white rounded-2xl border border-[#E7E0D5] p-5 space-y-2.5">
-        <div class="w-10 h-10 rounded-2xl bg-green-100 text-[#15803D] flex items-center justify-center font-extrabold">
-          01
+  <footer class="mt-14 bg-[#1C1917] text-stone-300 border-t border-stone-800 pb-20 lg:pb-0">
+    <!-- Highlight Keamanan Komunitas -->
+    <div class="border-b border-stone-800/90 bg-stone-900/60">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#15803D] live-dot shrink-0"></span>
+          <p class="text-xs font-semibold text-stone-200">
+            Ekosistem C2C Hiper-Lokal: <span class="text-amber-400 font-bold">100% Real Pict Tanpa Filter</span> &amp; <span class="text-green-400 font-bold">Escrow COD 6-Digit OTP</span>
+          </p>
         </div>
-        <h2 class="text-base font-extrabold text-[#1C1917]">Ekonomi Sirkular Hiper-Lokal</h2>
-        <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-          Memperpanjang usia pakai barang elektronik, buku, pakaian, hingga perabot rumah tangga dalam radius dekat (1–10 km) tanpa jejak karbon pengiriman jarak jauh.
-        </p>
-      </article>
-
-      <article class="bg-white rounded-2xl border border-[#E7E0D5] p-5 space-y-2.5">
-        <div class="w-10 h-10 rounded-2xl bg-amber-100 text-[#D97706] flex items-center justify-center font-extrabold">
-          02
-        </div>
-        <h2 class="text-base font-extrabold text-[#1C1917]">Dukungan Kreator Handmade</h2>
-        <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-          Membantu pengrajin keramik, rajutan, kayu, dan aksesori skala kecil memasarkan karya buatan tangan langsung ke pembeli di kota yang sama.
-        </p>
-      </article>
-
-      <article class="bg-white rounded-2xl border border-[#E7E0D5] p-5 space-y-2.5">
-        <div class="w-10 h-10 rounded-2xl bg-orange-100 text-[#C2410C] flex items-center justify-center font-extrabold">
-          03
-        </div>
-        <h2 class="text-base font-extrabold text-[#1C1917]">Nilai Transparansi Radikal</h2>
-        <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-          Penjual wajib mengisi persentase kondisi fisik, mengakui bagian minus secara jujur di awal, serta melampirkan foto asli kamera tanpa filter berlebihan.
-        </p>
-      </article>
-    </div>
-
-    <div class="bg-[#1C1917] text-white rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-      <div>
-        <h3 class="text-lg font-extrabold">Punya barang terawat atau karya handmade?</h3>
-        <p class="text-xs sm:text-sm text-stone-300 mt-1">Tayangkan gratis dan temukan pembeli atau rekan barter di sekitar Anda hari ini.</p>
-      </div>
-      <div class="flex gap-2.5 shrink-0">
-        <button type="button" data-nav-view="catalog" class="nav-link-trigger px-4 py-2.5 rounded-2xl bg-white/10 hover:bg-white/20 text-xs font-extrabold">
-          Jelajahi Katalog
-        </button>
-        <button type="button" id="btn-about-sell" class="px-4 py-2.5 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-xs font-extrabold">
-          + Pasang Lungsuran
+        <button type="button" data-nav-view="guide" class="text-xs font-extrabold text-orange-400 hover:text-orange-300 transition-colors shrink-0">
+          Pelajari Standar Keamanan COD →
         </button>
       </div>
     </div>
-  </section>
 
-  <!-- ===================================================================== -->
-  <!-- VIEW 3: HALAMAN PANDUAN AMAN (LANGKAH TRANSAKSI, FISIK & COD OTP)     -->
-  <!-- ===================================================================== -->
-  <section id="view-guide" class="app-view hidden max-w-5xl mx-auto px-4 sm:px-6 pt-6 space-y-6 animate-fade-up">
-    <div class="bg-white rounded-2xl border border-[#E7E0D5] p-6 sm:p-8 shadow-2xs">
-      <span class="inline-block px-3 py-1 rounded-xl bg-green-100 text-[#15803D] text-xs font-extrabold mb-2">
-        Panduan Keamanan Transaksi
-      </span>
-      <h1 class="text-2xl sm:text-3xl font-extrabold text-[#1C1917]">
-        4 Langkah Jual-Beli & Barter Aman di Lungsuran
-      </h1>
-      <p class="text-xs sm:text-sm text-[#57534E] mt-2">
-        Ikuti standar keselamatan komunitas agar setiap serah terima barang berjalan nyaman tanpa risiko penipuan.
-      </p>
+    <!-- Konten Utama 4 Kolom -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8">
 
-      <!-- 4 Step Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-        <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
-          <span class="text-xs font-extrabold text-[#C2410C]">LANGKAH 1</span>
-          <h2 class="text-base font-extrabold text-[#1C1917]">Periksa Checklist & Foto Real Pict</h2>
-          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-            Baca persentase kondisi (misal 92% mulus) dan catatan minus jujur penjual sebelum menawar. Pastikan foto menampilkan detail fisik asli.
-          </p>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
-          <span class="text-xs font-extrabold text-[#D97706]">LANGKAH 2</span>
-          <h2 class="text-base font-extrabold text-[#1C1917]">Negosiasi Harga atau Ajukan Barter</h2>
-          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-            Gunakan fitur chat bawaan untuk mengajukan tawaran harga wajar atau menukar dengan barang milik Anda (disertai foto & deskripsi kondisi).
-          </p>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
-          <span class="text-xs font-extrabold text-[#15803D]">LANGKAH 3</span>
-          <h2 class="text-base font-extrabold text-[#1C1917]">Pilih Titik Temu Publik (Safe Meetup)</h2>
-          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-            Selalu jadwalkan COD di area ramai ber-CCTV seperti minimarket (Indomaret/Alfamart), pos satpam kampus, atau taman kota pada siang/sore hari.
-          </p>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
-          <span class="text-xs font-extrabold text-[#15803D]">LANGKAH 4</span>
-          <h2 class="text-base font-extrabold text-[#1C1917]">Cek Fisik & Konfirmasi 6-Digit OTP</h2>
-          <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-            Uji fungsi barang saat bertemu. Jika sudah sesuai checklist, masukkan kode OTP 6-digit pada menu <strong>COD & OTP</strong> agar dana escrow cair ke penjual.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tips Cek Fisik Barang -->
-    <div class="bg-white rounded-2xl border border-[#E7E0D5] p-6 space-y-3">
-      <h2 class="text-lg font-extrabold text-[#1C1917]">Daftar Periksa Cepat Saat Bertemu COD</h2>
-      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-[#1C1917]">
-        <li class="p-3 rounded-2xl bg-green-50/70 border border-green-200 font-medium">✓ Cocokkan fisik barang dengan catatan minus penjual di aplikasi.</li>
-        <li class="p-3 rounded-2xl bg-green-50/70 border border-green-200 font-medium">✓ Tes tombol, baterai, resleting, atau kelengkapan sebelum input OTP.</li>
-        <li class="p-3 rounded-2xl bg-amber-50/70 border border-amber-200 font-medium">! Jangan pernah membagikan kode OTP lewat chat sebelum barang di tangan Anda.</li>
-        <li class="p-3 rounded-2xl bg-amber-50/70 border border-amber-200 font-medium">! Hindari lokasi pertemuan sepi atau transaksi di luar sistem escrow OTP.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===================================================================== -->
-  <!-- VIEW 4: HALAMAN PUSAT BANTUAN / HELP (FAQ ACCORDION & FORM PENGADUAN) -->
-  <!-- ===================================================================== -->
-  <section id="view-help" class="app-view hidden max-w-5xl mx-auto px-4 sm:px-6 pt-6 space-y-6 animate-fade-up">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-      <!-- Kolom Kiri: FAQ Interaktif Accordion -->
-      <div class="lg:col-span-7 bg-white rounded-2xl border border-[#E7E0D5] p-5 sm:p-6 space-y-4">
-        <div>
-          <span class="inline-block px-3 py-1 rounded-xl bg-amber-100 text-amber-900 text-xs font-extrabold mb-1.5">
-            Pusat Bantuan & FAQ
-          </span>
-          <h1 class="text-xl sm:text-2xl font-extrabold text-[#1C1917]">Pertanyaan yang Sering Diajukan</h1>
-        </div>
-
-        <div id="faq-accordion" class="space-y-2.5">
-          <!-- FAQ Item 1 -->
-          <div class="faq-item rounded-2xl border border-[#E7E0D5] bg-[#FAF7F2] overflow-hidden">
-            <button type="button" class="faq-trigger w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-[#1C1917]">
-              <span>Bagaimana cara kerja sistem Escrow Kode OTP saat COD?</span>
-              <span class="faq-icon text-[#C2410C] font-black text-base">+</span>
-            </button>
-            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-[#57534E] leading-relaxed border-t border-[#E7E0D5]/60 pt-2.5">
-              Saat jadwal COD dikunci, pembeli mendapat kode OTP 6-digit unik sementara dana ditahan aman di sistem escrow. Ketika bertemu di titik publik dan fisik barang sudah dicek sesuai deskripsi, pembeli mengonfirmasi kode OTP tersebut sehingga status berubah menjadi <strong>Dana Cair ke Penjual</strong>.
+        <!-- Kolom 1: Brand & Misi (5 Kolom di Desktop) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-2xl bg-[#C2410C] flex items-center justify-center text-white shadow-xs">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+            </div>
+            <div>
+              <span class="block text-lg font-extrabold tracking-tight text-white leading-none">Lungsuran</span>
+              <span class="block text-[11px] font-semibold text-stone-400 mt-0.5">Preloved & Handmade Lokal Terpercaya</span>
             </div>
           </div>
 
-          <!-- FAQ Item 2 -->
-          <div class="faq-item rounded-2xl border border-[#E7E0D5] bg-[#FAF7F2] overflow-hidden">
-            <button type="button" class="faq-trigger w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-[#1C1917]">
-              <span>Apakah boleh barter barang ditambah uang tunai?</span>
-              <span class="faq-icon text-[#C2410C] font-black text-base">+</span>
-            </button>
-            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-[#57534E] leading-relaxed border-t border-[#E7E0D5]/60 pt-2.5">
-              Bisa! Di dalam modal chat produk, pilih tab <strong>Ajukan Barter</strong>. Anda dapat menuliskan detail barang tukar beserta kondisi/foto real pict, lalu menambahkan nominal selisih tunai jika nilai barang berbeda.
-            </div>
-          </div>
+          <p class="text-xs sm:text-sm text-stone-400 leading-relaxed max-w-md">
+            Wadah ekonomi sirkular warga sekitar untuk mewariskan barang terawat dan memasarkan karya kerajinan tangan skala kecil secara jujur, dekat, dan aman.
+          </p>
 
-          <!-- FAQ Item 3 -->
-          <div class="faq-item rounded-2xl border border-[#E7E0D5] bg-[#FAF7F2] overflow-hidden">
-            <button type="button" class="faq-trigger w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-[#1C1917]">
-              <span>Mengapa wajib mengisi catatan minus dan foto tanpa filter?</span>
-              <span class="faq-icon text-[#C2410C] font-black text-base">+</span>
-            </button>
-            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-[#57534E] leading-relaxed border-t border-[#E7E0D5]/60 pt-2.5">
-              Untuk mencegah pembatalan sepihak saat bertemu COD. Kejujuran kondisi fisik sejak awal membuat pembeli dan penjual sama-sama hemat waktu dan saling percaya.
-            </div>
-          </div>
-
-          <!-- FAQ Item 4 -->
-          <div class="faq-item rounded-2xl border border-[#E7E0D5] bg-[#FAF7F2] overflow-hidden">
-            <button type="button" class="faq-trigger w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 font-extrabold text-xs sm:text-sm text-[#1C1917]">
-              <span>Bagaimana jika barang tidak sesuai saat ketemuan COD?</span>
-              <span class="faq-icon text-[#C2410C] font-black text-base">+</span>
-            </button>
-            <div class="faq-content hidden px-4 pb-4 text-xs sm:text-sm text-[#57534E] leading-relaxed border-t border-[#E7E0D5]/60 pt-2.5">
-              Jangan masukkan atau berikan kode OTP 6-digit Anda. Batalkan serah terima di lokasi publik tersebut dan laporkan detail transaksi melalui formulir bantuan di samping.
-            </div>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="px-2.5 py-1 rounded-xl bg-stone-800 border border-stone-700 text-[11px] font-bold text-stone-200">
+              Anti-XSS Protected
+            </span>
+            <span class="px-2.5 py-1 rounded-xl bg-stone-800 border border-stone-700 text-[11px] font-bold text-green-400">
+              Safe Meetup Verified
+            </span>
+            <span class="px-2.5 py-1 rounded-xl bg-stone-800 border border-stone-700 text-[11px] font-bold text-amber-400">
+              Zero Ongkir Jauh
+            </span>
           </div>
         </div>
-      </div>
 
-      <!-- Kolom Kanan: Formulir Pengaduan / Bantuan Langsung -->
-      <div class="lg:col-span-5 bg-white rounded-2xl border border-[#E7E0D5] p-5 sm:p-6 space-y-4">
-        <div>
-          <h2 class="text-lg font-extrabold text-[#1C1917]">Minta Bantuan / Laporan Kendala</h2>
-          <p class="text-xs text-[#57534E] mt-0.5">Tim moderator komunitas siap membantu kendala COD, sengketa kondisi barang, atau saran fitur.</p>
+        <!-- Kolom 2: Navigasi Platform (2 Kolom) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h3 class="text-xs font-extrabold uppercase tracking-wider text-white">Jelajahi</h3>
+          <ul class="space-y-2.5 text-xs sm:text-sm">
+            <li>
+              <button type="button" data-nav-view="catalog" class="text-stone-400 hover:text-orange-400 font-medium transition-colors">
+                Katalog Barang
+              </button>
+            </li>
+            <li>
+              <button type="button" data-nav-view="about" class="text-stone-400 hover:text-orange-400 font-medium transition-colors">
+                Tentang Kami
+              </button>
+            </li>
+            <li>
+              <button type="button" data-nav-view="guide" class="text-stone-400 hover:text-orange-400 font-medium transition-colors">
+                Panduan Aman
+              </button>
+            </li>
+            <li>
+              <button type="button" data-nav-view="help" class="text-stone-400 hover:text-orange-400 font-medium transition-colors">
+                Pusat Bantuan
+              </button>
+            </li>
+          </ul>
         </div>
 
-        <form id="form-help-ticket" class="space-y-3">
-          <div>
-            <label for="help-name" class="block text-xs font-extrabold text-[#1C1917] mb-1">Nama Lengkap *</label>
-            <input id="help-name" type="text" maxlength="60" required placeholder="Masukkan nama Anda" class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm">
-          </div>
+        <!-- Kolom 3: Fitur Transaksi (2 Kolom) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h3 class="text-xs font-extrabold uppercase tracking-wider text-white">Fitur Warga</h3>
+          <ul class="space-y-2.5 text-xs sm:text-sm">
+            <li>
+              <button type="button" id="footer-radius-5" class="text-stone-400 hover:text-orange-400 font-medium transition-colors text-left">
+                Radius ≤ 5 km
+              </button>
+            </li>
+            <li>
+              <button type="button" data-nav-view="catalog" class="text-stone-400 hover:text-orange-400 font-medium transition-colors text-left">
+                Tawar & Barter
+              </button>
+            </li>
+            <li>
+              <button type="button" data-nav-view="guide" class="text-stone-400 hover:text-orange-400 font-medium transition-colors text-left">
+                Checklist Minus Jujur
+              </button>
+            </li>
+            <li>
+              <button type="button" data-nav-view="help" class="text-stone-400 hover:text-orange-400 font-medium transition-colors text-left">
+                Lapor Kendala COD
+              </button>
+            </li>
+          </ul>
+        </div>
 
-          <div>
-            <label for="help-topic" class="block text-xs font-extrabold text-[#1C1917] mb-1">Kategori Bantuan *</label>
-            <select id="help-topic" class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm font-semibold">
-              <option value="Kendala Jadwal COD / OTP">Kendala Jadwal COD / OTP</option>
-              <option value="Laporan Kondisi Barang Tidak Sesuai">Laporan Kondisi Barang Tidak Sesuai</option>
-              <option value="Pertanyaan Sistem Barter">Pertanyaan Sistem Barter</option>
-              <option value="Saran Pengembangan Lungsuran">Saran Pengembangan Lungsuran</option>
-            </select>
+        <!-- Kolom 4: Titik Temu & Aksi Cepat (3 Kolom) -->
+        <div class="lg:col-span-3 space-y-3">
+          <h3 class="text-xs font-extrabold uppercase tracking-wider text-white">Titik COD Populer</h3>
+          <div class="p-3.5 rounded-2xl bg-stone-900 border border-stone-800 space-y-2 text-xs text-stone-400">
+            <p class="font-semibold text-stone-200">• Minimarket Ber-CCTV (24 Jam)</p>
+            <p class="font-semibold text-stone-200">• Area Kampus & Pos Satpam</p>
+            <p class="font-semibold text-stone-200">• Taman Kota Ruang Terbuka</p>
           </div>
-
-          <div>
-            <label for="help-tx-id" class="block text-xs font-extrabold text-[#1C1917] mb-1">ID Transaksi COD (Opsional)</label>
-            <input id="help-tx-id" type="text" maxlength="25" placeholder="Contoh: TX-8841" class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm">
-          </div>
-
-          <div>
-            <label for="help-message" class="block text-xs font-extrabold text-[#1C1917] mb-1">Detail Pesan atau Kronologi *</label>
-            <textarea id="help-message" rows="3" maxlength="300" required placeholder="Jelaskan pertanyaan atau kendala Anda secara singkat..." class="w-full px-3.5 py-2.5 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] text-sm"></textarea>
-          </div>
-
-          <button type="submit" class="w-full py-3 px-4 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-white text-sm font-extrabold transition-colors">
-            Kirim Tiket Bantuan
+          <button type="button" data-nav-view="help" class="w-full py-2.5 px-4 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-white text-xs font-extrabold transition-colors">
+            Butuh Bantuan Moderator?
           </button>
-        </form>
+        </div>
 
-        <!-- Riwayat Tiket Bantuan Pengguna -->
-        <div id="help-tickets-history" class="pt-3 border-t border-[#E7E0D5] space-y-2">
-          <!-- Di-render aman dengan textContent -->
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="mt-10 pt-6 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-400">
+        <p>© 2026 <strong class="text-stone-200">Lungsuran</strong> — Komunitas Preloved & Handmade Hiper-Lokal.</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <button type="button" data-nav-view="guide" class="hover:text-stone-200 transition-colors">Aturan Real Pict</button>
+          <span class="text-stone-700">•</span>
+          <button type="button" data-nav-view="about" class="hover:text-stone-200 transition-colors">Misi Ekonomi Sirkular</button>
+          <span class="text-stone-700">•</span>
+          <button type="button" data-nav-view="help" class="hover:text-stone-200 transition-colors">Kontak Bantuan</button>
         </div>
       </div>
     </div>
-  </section>
+  </footer>
 
   <!-- ===================================================================== -->
   <!-- MOBILE BOTTOM NAVIGATION BAR                                          -->
@@ -768,7 +914,7 @@
           </div>
         </form>
 
-        <!-- Tab 3: Ajukan Barter (Pilih Koleksi atau Input Detail Barang Tukar Baru) -->
+        <!-- Tab 3: Ajukan Barter -->
         <form id="form-chat-barter" class="hidden space-y-2">
           <div class="flex items-center justify-between">
             <label for="select-barter-mode" class="text-xs font-extrabold text-[#1C1917]">Sumber Barang Tukar:</label>
@@ -2002,6 +2148,15 @@
             switchView(btn.getAttribute("data-nav-view"));
           });
         });
+
+        // Footer Radius Shortcut
+        const footerRadiusBtn = document.getElementById("footer-radius-5");
+        if (footerRadiusBtn) {
+          footerRadiusBtn.addEventListener("click", function () {
+            switchView("catalog");
+            syncRadiusUI(5);
+          });
+        }
 
         // Radius Controls
         document.getElementById("radius-slider").addEventListener("input", function (e) {
