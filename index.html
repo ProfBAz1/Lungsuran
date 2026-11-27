@@ -206,7 +206,7 @@
     <!-- ===================================================================== -->
     <main id="view-catalog" class="app-view max-w-6xl mx-auto px-4 sm:px-6 pt-5 space-y-5">
 
-      <!-- BANNER INFORMASI SINGKAT TUJUAN & MANFAAT LUNGSURAN -->
+      <!-- BANNER INFORMASI SINGKAT LUNGSURAN -->
       <section aria-label="Informasi Singkat Lungsuran" class="bg-gradient-to-r from-[#FFF7ED] via-white to-[#F0FDF4] rounded-2xl border border-[#E7E0D5] p-4 sm:p-5 shadow-2xs">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="space-y-1.5 max-w-2xl">
@@ -222,7 +222,7 @@
               Beri Nyawa Kedua untuk Barang Terawat & Dukung Karya Handmade Sekitar
             </h1>
             <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-              <strong>Tujuan & Manfaat:</strong> Mengurangi limbah barang layak pakai, menghemat pengeluaran lewat sistem tawar & barter transparan, serta memudahkan transaksi tatap muka aman tanpa ongkos kirim mahal.
+              <strong>Tujuan & Manfaat:</strong> Mempermudah warga sekitar berbagi barang layak pakai, menghemat pengeluaran lewat sistem tawar & barter transparan, serta transaksi tatap muka aman tanpa ongkos kirim mahal.
             </p>
           </div>
 
@@ -294,7 +294,7 @@
           </div>
         </div>
 
-        <!-- Bar Kategori, Filter Barter & Urutan -->
+        <!-- Bar Kategori, Filter Barter, Tersimpan & Urutan -->
         <div class="pt-3 border-t border-[#F3EDE2] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0">
             <button type="button" data-cat="all" class="cat-tab px-3.5 py-2 rounded-2xl text-xs font-extrabold bg-[#1C1917] text-white shrink-0 transition-colors">
@@ -309,6 +309,11 @@
             <button type="button" id="toggle-barter-only" class="px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#D97706] shrink-0 transition-colors flex items-center gap-1.5">
               <span class="text-[#D97706] font-black">⇄</span>
               <span>Bisa Barter</span>
+            </button>
+            <button type="button" id="toggle-saved-only" class="px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] shrink-0 transition-colors flex items-center gap-1.5">
+              <span class="text-[#C2410C] font-black">♥</span>
+              <span>Tersimpan</span>
+              <span id="saved-tab-badge" class="px-1.5 py-0.5 rounded-full bg-orange-100 text-[#C2410C] text-[10px] font-extrabold">0</span>
             </button>
           </div>
 
@@ -334,12 +339,12 @@
           <div class="w-14 h-14 rounded-2xl bg-orange-50 text-[#C2410C] flex items-center justify-center mx-auto mb-3 font-extrabold text-xl">
             ?
           </div>
-          <h2 class="text-base font-extrabold text-[#1C1917]">Tidak ada barang ditemukan pada radius ini</h2>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Tidak ada barang ditemukan pada filter ini</h2>
           <p class="text-xs sm:text-sm text-[#57534E] max-w-md mx-auto mt-1">
-            Perlebar jarak radius kilometer atau atur ulang kata kunci pencarian untuk melihat barang dari lingkungan sekitar.
+            Perlebar jarak radius kilometer, matikan filter tersimpan, atau atur ulang pencarian untuk melihat barang dari lingkungan sekitar.
           </p>
           <button type="button" id="btn-reset-filters" class="mt-4 px-5 py-2.5 rounded-2xl bg-[#C2410C] hover:bg-[#9A3412] text-white text-xs font-extrabold transition-colors">
-            Tampilkan Semua Jarak (15 km)
+            Reset Semua Filter (15 km)
           </button>
         </div>
       </section>
@@ -357,7 +362,7 @@
           Menghubungkan Warga Lokal Lewat Barang Bermakna & Kejujuran Kondisi
         </h1>
         <p class="text-sm sm:text-base text-[#57534E] leading-relaxed">
-          <strong>Lungsuran</strong> lahir dari kebiasaan baik masyarakat Indonesia mewariskan barang layak pakai kepada kerabat atau tetangga terdekat. Kami membangun ruang transaksi Consumer-to-Consumer (C2C) hiper-lokal agar barang preloved berkualitas tidak menumpuk menjadi limbah, sekaligus memberi panggung bagi perajin handmade skala rumahan.
+          <strong>Lungsuran</strong> lahir dari kebiasaan baik masyarakat Indonesia mewariskan barang layak pakai kepada kerabat atau tetangga terdekat. Kami membangun ruang transaksi Consumer-to-Consumer (C2C) hiper-lokal agar barang preloved berkualitas dapat dimanfaatkan kembali, sekaligus memberi panggung bagi perajin handmade skala rumahan.
         </p>
       </div>
 
@@ -369,7 +374,7 @@
           </div>
           <h2 class="text-base font-extrabold text-[#1C1917]">Ekonomi Sirkular Hiper-Lokal</h2>
           <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-            Memperpanjang usia pakai barang elektronik, buku, pakaian, hingga perabot rumah tangga dalam radius dekat (1–10 km) tanpa jejak karbon pengiriman jarak jauh.
+            Memperpanjang usia pakai barang elektronik, buku, pakaian, hingga perabot rumah tangga dalam radius dekat (1–10 km) tanpa ongkos kirim jarak jauh.
           </p>
         </article>
 
@@ -453,9 +458,9 @@
 
           <div class="p-4 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] space-y-1.5">
             <span class="text-xs font-extrabold text-[#15803D]">LANGKAH 4</span>
-            <h2 class="text-base font-extrabold text-[#1C1917]">Cek Fisik & Konfirmasi 6-Digit OTP</h2>
+            <h2 class="text-base font-extrabold text-[#1C1917]">Konfirmasi 6-Digit OTP & Beri Rating</h2>
             <p class="text-xs sm:text-sm text-[#57534E] leading-relaxed">
-              Uji fungsi barang saat bertemu. Jika sudah sesuai checklist, masukkan kode OTP 6-digit pada menu <strong>COD & OTP</strong> agar dana escrow cair ke penjual.
+              Uji fungsi barang saat bertemu. Jika sesuai checklist, masukkan kode OTP 6-digit agar dana cair ke penjual, lalu beri rating kejujuran penjual.
             </p>
           </div>
         </div>
@@ -631,7 +636,7 @@
               Safe Meetup Verified
             </span>
             <span class="px-2.5 py-1 rounded-xl bg-stone-800 border border-stone-700 text-[11px] font-bold text-amber-400">
-              Zero Ongkir Jauh
+              100% Real Pict
             </span>
           </div>
         </div>
@@ -673,8 +678,8 @@
               </button>
             </li>
             <li>
-              <button type="button" data-nav-view="catalog" class="text-stone-400 hover:text-orange-400 font-medium transition-colors text-left">
-                Tawar & Barter
+              <button type="button" id="footer-saved-link" class="text-stone-400 hover:text-orange-400 font-medium transition-colors text-left">
+                Wishlist Tersimpan
               </button>
             </li>
             <li>
@@ -770,7 +775,7 @@
   </nav>
 
   <!-- ===================================================================== -->
-  <!-- MODAL 1: DETAIL PRODUK & CHECKLIST KONDISI TRANSPARAN                 -->
+  <!-- MODAL 1: DETAIL PRODUK, BOOKMARK & CHECKLIST KONDISI TRANSPARAN       -->
   <!-- ===================================================================== -->
   <div id="modal-detail" class="hidden fixed inset-0 z-50 bg-stone-950/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4">
     <div class="bg-white w-full max-w-2xl rounded-t-2xl sm:rounded-2xl border border-[#E7E0D5] max-h-[92vh] flex flex-col overflow-hidden shadow-2xl">
@@ -781,12 +786,20 @@
             <span>✓ Real Pict Tanpa Filter</span>
           </span>
         </div>
-        <button type="button" data-close-modal="modal-detail" class="p-2 rounded-xl bg-white border border-[#E7E0D5] text-[#57534E] hover:text-[#1C1917]" aria-label="Tutup detail">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
+        <div class="flex items-center gap-1.5">
+          <button type="button" id="btn-detail-bookmark" class="px-3 py-2 rounded-xl bg-white border border-[#E7E0D5] text-xs font-extrabold text-[#57534E] hover:border-[#C2410C] transition-colors">
+            ♡ Simpan
+          </button>
+          <button type="button" id="btn-detail-share" class="px-3 py-2 rounded-xl bg-white border border-[#E7E0D5] text-xs font-extrabold text-[#1C1917] hover:border-[#15803D] transition-colors">
+            Salin Info
+          </button>
+          <button type="button" data-close-modal="modal-detail" class="p-2 rounded-xl bg-white border border-[#E7E0D5] text-[#57534E] hover:text-[#1C1917]" aria-label="Tutup detail">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div class="p-5 overflow-y-auto space-y-5">
@@ -802,7 +815,9 @@
           <div class="flex flex-col justify-between space-y-3">
             <div>
               <h2 id="detail-title" class="text-lg sm:text-xl font-extrabold text-[#1C1917] leading-snug">Judul Barang</h2>
-              <p id="detail-price" class="text-2xl font-extrabold text-[#C2410C] mt-1">Rp 0</p>
+              <div class="mt-1">
+                <p id="detail-price" class="text-2xl font-extrabold text-[#C2410C]">Rp 0</p>
+              </div>
 
               <div class="mt-3 p-3 rounded-2xl bg-[#FAF7F2] border border-[#E7E0D5] flex items-center justify-between">
                 <div>
@@ -1136,14 +1151,14 @@
   </div>
 
   <!-- ===================================================================== -->
-  <!-- MODAL 5: TRANSAKSI COD SAFE MEETUP & KONFIRMASI OTP ESCROW            -->
+  <!-- MODAL 5: TRANSAKSI COD SAFE MEETUP, KONFIRMASI OTP & RATING ULASAN   -->
   <!-- ===================================================================== -->
   <div id="modal-transactions" class="hidden fixed inset-0 z-50 bg-stone-950/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4">
     <div class="bg-white w-full max-w-xl rounded-t-2xl sm:rounded-2xl border border-[#E7E0D5] max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
       <div class="px-5 py-4 border-b border-[#E7E0D5] bg-[#FAF7F2] flex items-center justify-between">
         <div>
-          <h2 class="text-base font-extrabold text-[#1C1917]">Transaksi COD & Konfirmasi OTP Escrow</h2>
-          <p class="text-xs text-[#57534E]">Masukkan 6-digit OTP saat barang diterima agar dana cair ke penjual</p>
+          <h2 class="text-base font-extrabold text-[#1C1917]">Transaksi COD, OTP Escrow & Ulasan</h2>
+          <p class="text-xs text-[#57534E]">Konfirmasi 6-digit OTP saat barang diterima lalu beri rating penjual</p>
         </div>
         <button type="button" data-close-modal="modal-transactions" class="p-2 rounded-xl bg-white border border-[#E7E0D5] text-[#57534E]" aria-label="Tutup transaksi">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1190,7 +1205,7 @@
       }
 
       /* -------------------------------------------------------------------
-       * 2. DATA AWAL KATALOG, KOLEKSI BARTER, TRANSAKSI & TIKET BANTUAN
+       * 2. DATA AWAL KATALOG, KOLEKSI BARTER & TRANSAKSI
        * ------------------------------------------------------------------- */
       const INITIAL_PRODUCTS = [
         {
@@ -1202,6 +1217,7 @@
           area: "Kampus Unsam",
           conditionScore: 92,
           seller: "Raka Pratama",
+          codCount: 11,
           sellerStats: "Mahasiswa • 11 COD Sukses",
           allowOffer: true,
           allowBarter: true,
@@ -1224,6 +1240,7 @@
           area: "Langsa Kota",
           conditionScore: 100,
           seller: "Studio Kriya Nadira",
+          codCount: 24,
           sellerStats: "Perajin Lokal • 24 COD Sukses",
           allowOffer: true,
           allowBarter: true,
@@ -1246,6 +1263,7 @@
           area: "Gampong Jawa",
           conditionScore: 90,
           seller: "Dimas Saputra",
+          codCount: 8,
           sellerStats: "Warga Terverifikasi • 8 COD Sukses",
           allowOffer: true,
           allowBarter: true,
@@ -1268,6 +1286,7 @@
           area: "Paya Bujok",
           conditionScore: 98,
           seller: "Ayu Lestari Craft",
+          codCount: 19,
           sellerStats: "UMKM Rumahan • 19 COD Sukses",
           allowOffer: true,
           allowBarter: false,
@@ -1290,6 +1309,7 @@
           area: "Teungoh",
           conditionScore: 96,
           seller: "Bengkel Kayu Pak Hendra",
+          codCount: 31,
           sellerStats: "Perajin Kayu • 31 COD Sukses",
           allowOffer: true,
           allowBarter: true,
@@ -1312,6 +1332,7 @@
           area: "Langsa Lama",
           conditionScore: 89,
           seller: "Fajar Nugroho",
+          codCount: 6,
           sellerStats: "Warga Terverifikasi • 6 COD Sukses",
           allowOffer: true,
           allowBarter: true,
@@ -1343,14 +1364,15 @@
           date: "2026-11-28",
           time: "16:00",
           otp: "492815",
-          status: "MENUNGGU_COD"
+          status: "MENUNGGU_COD",
+          review: null
         }
       ];
 
       /* -------------------------------------------------------------------
        * 3. STATE APLIKASI & LOCALSTORAGE PERSISTENCE
        * ------------------------------------------------------------------- */
-      const STORAGE_KEY = "lungsuran_c2c_v2";
+      const STORAGE_KEY = "lungsuran_c2c_pkg3_v1";
 
       function loadState() {
         try {
@@ -1358,7 +1380,14 @@
           if (raw) {
             const parsed = JSON.parse(raw);
             if (Array.isArray(parsed.products) && parsed.products.length > 0) {
-              return parsed;
+              return {
+                products: parsed.products,
+                savedProductIds: Array.isArray(parsed.savedProductIds) ? parsed.savedProductIds : [],
+                myBarterItems: Array.isArray(parsed.myBarterItems) ? parsed.myBarterItems : INITIAL_MY_BARTER_ITEMS,
+                transactions: Array.isArray(parsed.transactions) ? parsed.transactions : INITIAL_TRANSACTIONS,
+                chats: parsed.chats || {},
+                helpTickets: Array.isArray(parsed.helpTickets) ? parsed.helpTickets : []
+              };
             }
           }
         } catch (err) {
@@ -1366,6 +1395,7 @@
         }
         return {
           products: INITIAL_PRODUCTS,
+          savedProductIds: [],
           myBarterItems: INITIAL_MY_BARTER_ITEMS,
           transactions: INITIAL_TRANSACTIONS,
           chats: {},
@@ -1388,6 +1418,7 @@
         maxRadius: 5,
         category: "all",
         barterOnly: false,
+        savedOnly: false,
         searchQuery: "",
         sortBy: "nearest",
         activeProductId: null,
@@ -1472,7 +1503,48 @@
       }
 
       /* -------------------------------------------------------------------
-       * 5. NAVIGASI MULTI-HALAMAN (KATALOG, TENTANG, PANDUAN, BANTUAN)
+       * 5. BOOKMARK / WISHLIST TERSIMPAN
+       * ------------------------------------------------------------------- */
+      function renderSavedBadge() {
+        const savedCount = appState.savedProductIds.length;
+        const badge = document.getElementById("saved-tab-badge");
+        if (badge) {
+          badge.textContent = String(savedCount);
+        }
+      }
+
+      function isProductSaved(productId) {
+        return appState.savedProductIds.indexOf(productId) !== -1;
+      }
+
+      function toggleProductBookmark(productId) {
+        const idx = appState.savedProductIds.indexOf(productId);
+        const product = getProductById(productId);
+        if (idx === -1) {
+          appState.savedProductIds.push(productId);
+          showToast("Tersimpan di Wishlist", (product ? product.title : "Barang") + " ditambahkan ke daftar tersimpan.", "success");
+        } else {
+          appState.savedProductIds.splice(idx, 1);
+          showToast("Dihapus dari Tersimpan", "Barang dihapus dari daftar tersimpan Anda.", "info");
+        }
+        saveState();
+        renderSavedBadge();
+        renderCatalog();
+        updateDetailBookmarkButton(productId);
+      }
+
+      function updateDetailBookmarkButton(productId) {
+        const btn = document.getElementById("btn-detail-bookmark");
+        if (!btn) return;
+        const saved = isProductSaved(productId);
+        btn.textContent = saved ? "♥ Tersimpan" : "♡ Simpan";
+        btn.className = saved
+          ? "px-3 py-2 rounded-xl bg-orange-50 border border-[#C2410C] text-xs font-extrabold text-[#C2410C] transition-colors"
+          : "px-3 py-2 rounded-xl bg-white border border-[#E7E0D5] text-xs font-extrabold text-[#57534E] hover:border-[#C2410C] transition-colors";
+      }
+
+      /* -------------------------------------------------------------------
+       * 6. NAVIGASI MULTI-HALAMAN (KATALOG, TENTANG, PANDUAN, BANTUAN)
        * ------------------------------------------------------------------- */
       function switchView(viewName) {
         uiState.activeView = viewName;
@@ -1485,7 +1557,6 @@
           target.classList.remove("hidden");
         }
 
-        // Update Desktop Nav
         document.querySelectorAll(".main-nav-btn").forEach(function (btn) {
           const active = btn.getAttribute("data-nav-view") === viewName;
           btn.className = active
@@ -1493,7 +1564,6 @@
             : "main-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold text-[#57534E] hover:text-[#1C1917] transition-colors";
         });
 
-        // Update Tablet Sub-Nav
         document.querySelectorAll(".main-nav-btn-mob").forEach(function (btn) {
           const active = btn.getAttribute("data-nav-view") === viewName;
           btn.className = active
@@ -1501,7 +1571,6 @@
             : "main-nav-btn-mob px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-[#E7E0D5] text-[#57534E]";
         });
 
-        // Update Mobile Bottom Nav
         document.querySelectorAll(".mob-bottom-btn").forEach(function (btn) {
           const active = btn.getAttribute("data-nav-view") === viewName;
           btn.className = active
@@ -1513,7 +1582,7 @@
       }
 
       /* -------------------------------------------------------------------
-       * 6. RENDER KATALOG PRODUK (100% DOM AMAN)
+       * 7. RENDER KATALOG PRODUK (100% DOM AMAN)
        * ------------------------------------------------------------------- */
       function getFilteredProducts() {
         const q = uiState.searchQuery.trim().toLowerCase();
@@ -1522,12 +1591,13 @@
           const matchRadius = uiState.maxRadius >= 15 ? true : item.distanceKm <= uiState.maxRadius;
           const matchCat = uiState.category === "all" ? true : item.type === uiState.category;
           const matchBarter = uiState.barterOnly ? Boolean(item.allowBarter) : true;
+          const matchSaved = uiState.savedOnly ? isProductSaved(item.id) : true;
           const matchSearch =
             !q ||
             item.title.toLowerCase().includes(q) ||
             item.area.toLowerCase().includes(q) ||
             item.description.toLowerCase().includes(q);
-          return matchRadius && matchCat && matchBarter && matchSearch;
+          return matchRadius && matchCat && matchBarter && matchSaved && matchSearch;
         });
 
         filtered.sort(function (a, b) {
@@ -1579,9 +1649,12 @@
           img.className = "w-full h-full object-cover hover:scale-105 transition-transform duration-300";
           imgWrap.appendChild(img);
 
-          // Top Badges: Kategori + Real Pict Tanpa Filter
+          // Top Badges + Bookmark Button
           const topBadges = document.createElement("div");
           topBadges.className = "absolute top-3 left-3 right-3 flex items-center justify-between gap-2";
+
+          const leftBadgeGroup = document.createElement("div");
+          leftBadgeGroup.className = "flex items-center gap-1.5 flex-wrap";
 
           const typePill = document.createElement("span");
           typePill.className =
@@ -1591,11 +1664,29 @@
 
           const realPictPill = document.createElement("span");
           realPictPill.className =
-            "px-2.5 py-1 rounded-xl text-[11px] font-extrabold bg-white/95 text-[#15803D] border border-green-200";
-          realPictPill.textContent = "✓ Real Pict Tanpa Filter";
+            "px-2 py-1 rounded-xl text-[10px] font-extrabold bg-white/95 text-[#15803D] border border-green-200";
+          realPictPill.textContent = "✓ Real Pict";
 
-          topBadges.appendChild(typePill);
-          topBadges.appendChild(realPictPill);
+          leftBadgeGroup.appendChild(typePill);
+          leftBadgeGroup.appendChild(realPictPill);
+
+          const saved = isProductSaved(item.id);
+          const saveBtn = document.createElement("button");
+          saveBtn.type = "button";
+          saveBtn.setAttribute("aria-label", saved ? "Hapus dari tersimpan" : "Simpan barang");
+          saveBtn.className =
+            "w-8 h-8 rounded-xl flex items-center justify-center text-sm font-black shadow-xs transition-colors " +
+            (saved
+              ? "bg-[#C2410C] text-white"
+              : "bg-white/95 text-[#57534E] hover:text-[#C2410C]");
+          saveBtn.textContent = saved ? "♥" : "♡";
+          saveBtn.addEventListener("click", function (ev) {
+            ev.stopPropagation();
+            toggleProductBookmark(item.id);
+          });
+
+          topBadges.appendChild(leftBadgeGroup);
+          topBadges.appendChild(saveBtn);
           imgWrap.appendChild(topBadges);
 
           // Bottom Distance & Condition Score
@@ -1675,7 +1766,7 @@
       }
 
       /* -------------------------------------------------------------------
-       * 7. DETAIL PRODUK, CHAT NEGOSIASI, BARTER & COD OTP
+       * 8. DETAIL PRODUK, CHAT NEGOSIASI, BARTER & COD OTP + RATING
        * ------------------------------------------------------------------- */
       function getProductById(id) {
         return appState.products.find(function (p) {
@@ -1700,6 +1791,8 @@
         document.getElementById("detail-seller-stats").textContent = item.sellerStats;
         document.getElementById("detail-minus").textContent = item.minusNote;
         document.getElementById("detail-desc").textContent = item.description;
+
+        updateDetailBookmarkButton(item.id);
 
         const tagsWrap = document.getElementById("detail-flex-tags");
         clearElement(tagsWrap);
@@ -2055,12 +2148,19 @@
               e.preventDefault();
               if (input.value.trim() === tx.otp) {
                 tx.status = "SELESAI";
+
+                const linkedProd = getProductById(tx.productId);
+                if (linkedProd) {
+                  linkedProd.codCount = (linkedProd.codCount || 1) + 1;
+                  linkedProd.sellerStats = "Terverifikasi • " + linkedProd.codCount + " COD Sukses";
+                }
+
                 saveState();
                 updateBadges();
                 renderTransactionsList();
                 showToast(
                   "Status: Dana Cair ke Penjual",
-                  "OTP terverifikasi! Dana " + formatRupiah(tx.amount) + " telah dicairkan ke " + tx.seller + ".",
+                  "OTP terverifikasi! Transaksi selesai. Silakan beri ulasan untuk penjual.",
                   "success"
                 );
               } else {
@@ -2073,6 +2173,91 @@
             otpBox.appendChild(topOtp);
             otpBox.appendChild(form);
             card.appendChild(otpBox);
+          } else {
+            // RATING & ULASAN PASCA-OTP
+            const reviewBox = document.createElement("div");
+            reviewBox.className = "p-3.5 rounded-xl bg-white border border-green-200 space-y-2.5";
+
+            if (tx.review) {
+              const revTitle = document.createElement("p");
+              revTitle.className = "text-xs font-extrabold text-[#15803D]";
+              revTitle.textContent = "✓ Ulasan Terkirim (" + tx.review.stars + "/5 Bintang) • " + tx.review.tag;
+
+              const revText = document.createElement("p");
+              revText.className = "text-xs text-[#57534E]";
+              revText.textContent = "\"" + tx.review.comment + "\"";
+
+              reviewBox.appendChild(revTitle);
+              reviewBox.appendChild(revText);
+            } else {
+              const revHeader = document.createElement("p");
+              revHeader.className = "text-xs font-extrabold text-[#1C1917]";
+              revHeader.textContent = "Beri Rating & Ulasan untuk " + tx.seller + ":";
+
+              const revForm = document.createElement("form");
+              revForm.className = "space-y-2";
+
+              const rowControls = document.createElement("div");
+              rowControls.className = "grid grid-cols-2 gap-2";
+
+              const starSelect = document.createElement("select");
+              starSelect.className = "px-2.5 py-2 rounded-xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs font-extrabold text-amber-800";
+              ["5 Bintang (Sangat Puas)", "4 Bintang (Puas)", "3 Bintang (Cukup)"].forEach(function (label, idx) {
+                const o = document.createElement("option");
+                o.value = String(5 - idx);
+                o.textContent = "★ " + label;
+                starSelect.appendChild(o);
+              });
+
+              const tagSelect = document.createElement("select");
+              tagSelect.className = "px-2.5 py-2 rounded-xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs font-bold text-[#1C1917]";
+              ["Foto Sesuai Asli", "Minus Jujur Transparan", "Tepat Waktu COD"].forEach(function (tg) {
+                const o = document.createElement("option");
+                o.value = tg;
+                o.textContent = tg;
+                tagSelect.appendChild(o);
+              });
+
+              rowControls.appendChild(starSelect);
+              rowControls.appendChild(tagSelect);
+
+              const commentRow = document.createElement("div");
+              commentRow.className = "flex gap-2";
+
+              const commentInput = document.createElement("input");
+              commentInput.type = "text";
+              commentInput.maxLength = 120;
+              commentInput.required = true;
+              commentInput.placeholder = "Tulis pengalaman serah terima barang...";
+              commentInput.className = "flex-1 px-3 py-2 rounded-xl bg-[#FAF7F2] border border-[#E7E0D5] text-xs";
+
+              const sendRevBtn = document.createElement("button");
+              sendRevBtn.type = "submit";
+              sendRevBtn.className = "px-3.5 py-2 rounded-xl bg-[#C2410C] hover:bg-[#9A3412] text-white text-xs font-extrabold shrink-0";
+              sendRevBtn.textContent = "Kirim Ulasan";
+
+              revForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                tx.review = {
+                  stars: Number(starSelect.value),
+                  tag: tagSelect.value,
+                  comment: commentInput.value.trim()
+                };
+                saveState();
+                renderTransactionsList();
+                showToast("Ulasan Dipublikasikan", "Reputasi " + tx.seller + " telah diperbarui.", "success");
+              });
+
+              commentRow.appendChild(commentInput);
+              commentRow.appendChild(sendRevBtn);
+
+              revForm.appendChild(rowControls);
+              revForm.appendChild(commentRow);
+              reviewBox.appendChild(revHeader);
+              reviewBox.appendChild(revForm);
+            }
+
+            card.appendChild(reviewBox);
           }
 
           container.appendChild(card);
@@ -2080,7 +2265,7 @@
       }
 
       /* -------------------------------------------------------------------
-       * 8. RENDER RIWAYAT TIKET PUSAT BANTUAN
+       * 9. RENDER RIWAYAT TIKET PUSAT BANTUAN
        * ------------------------------------------------------------------- */
       function renderHelpTickets() {
         const box = document.getElementById("help-tickets-history");
@@ -2119,7 +2304,7 @@
       }
 
       /* -------------------------------------------------------------------
-       * 9. INISIALISASI EVENT LISTENERS
+       * 10. INISIALISASI EVENT LISTENERS
        * ------------------------------------------------------------------- */
       function syncRadiusUI(newRadius) {
         uiState.maxRadius = Number(newRadius);
@@ -2140,6 +2325,15 @@
         renderCatalog();
       }
 
+      function setSavedFilterState(enableSaved) {
+        uiState.savedOnly = Boolean(enableSaved);
+        const savedToggle = document.getElementById("toggle-saved-only");
+        savedToggle.className = uiState.savedOnly
+          ? "px-3.5 py-2 rounded-2xl text-xs font-extrabold bg-orange-100 border border-[#C2410C] text-orange-950 shrink-0 transition-colors flex items-center gap-1.5"
+          : "px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#C2410C] shrink-0 transition-colors flex items-center gap-1.5";
+        renderCatalog();
+      }
+
       function initEventListeners() {
         // Navigation View Triggers
         document.querySelectorAll("[data-nav-view]").forEach(function (btn) {
@@ -2148,12 +2342,21 @@
           });
         });
 
-        // Footer Radius Shortcut
+        // Footer Shortcuts
         const footerRadiusBtn = document.getElementById("footer-radius-5");
         if (footerRadiusBtn) {
           footerRadiusBtn.addEventListener("click", function () {
             switchView("catalog");
             syncRadiusUI(5);
+          });
+        }
+
+        const footerSavedBtn = document.getElementById("footer-saved-link");
+        if (footerSavedBtn) {
+          footerSavedBtn.addEventListener("click", function () {
+            switchView("catalog");
+            syncRadiusUI(15);
+            setSavedFilterState(true);
           });
         }
 
@@ -2191,6 +2394,11 @@
           renderCatalog();
         });
 
+        // Toggle Saved / Bookmark Only
+        document.getElementById("toggle-saved-only").addEventListener("click", function () {
+          setSavedFilterState(!uiState.savedOnly);
+        });
+
         // Search & Sort
         document.getElementById("search-input").addEventListener("input", function (e) {
           uiState.searchQuery = e.target.value;
@@ -2202,7 +2410,10 @@
         });
         document.getElementById("btn-reset-filters").addEventListener("click", function () {
           uiState.searchQuery = "";
+          uiState.barterOnly = false;
           document.getElementById("search-input").value = "";
+          barterToggle.className = "px-3.5 py-2 rounded-2xl text-xs font-bold bg-[#FAF7F2] border border-[#E7E0D5] text-[#57534E] hover:border-[#D97706] shrink-0 transition-colors flex items-center gap-1.5";
+          setSavedFilterState(false);
           syncRadiusUI(15);
         });
 
@@ -2219,7 +2430,40 @@
           });
         });
 
-        // Detail Modal Buttons
+        // Detail Modal Bookmark & Share
+        document.getElementById("btn-detail-bookmark").addEventListener("click", function () {
+          if (uiState.activeProductId) {
+            toggleProductBookmark(uiState.activeProductId);
+          }
+        });
+
+        document.getElementById("btn-detail-share").addEventListener("click", function () {
+          const item = getProductById(uiState.activeProductId);
+          if (!item) return;
+          const shareText =
+            "[Lungsuran Lokal] " +
+            item.title +
+            " (" +
+            item.conditionScore +
+            "% Mulus) — " +
+            formatRupiah(item.price) +
+            " | Lokasi: " +
+            item.area +
+            " (" +
+            item.distanceKm +
+            " km). Minus jujur: " +
+            item.minusNote;
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(shareText).then(function () {
+              showToast("Info Produk Disalin", "Siap ditempel ke WhatsApp atau grup komunitas!", "success");
+            });
+          } else {
+            showToast("Info Produk Siap", shareText, "info");
+          }
+        });
+
+        // Detail Modal Chat & COD Buttons
         document.getElementById("btn-detail-chat").addEventListener("click", function () {
           const id = uiState.activeProductId;
           closeModal("modal-detail");
@@ -2357,7 +2601,8 @@
             date: dateVal,
             time: timeVal,
             otp: otpCode,
-            status: "MENUNGGU_COD"
+            status: "MENUNGGU_COD",
+            review: null
           });
 
           saveState();
@@ -2448,6 +2693,7 @@
             area: distParts[1] || "Langsa Kota",
             conditionScore: score,
             seller: "Anda (Penjual Lokal)",
+            codCount: 1,
             sellerStats: "Akun Aktif • Real Pict Verified",
             allowOffer: document.getElementById("sell-allow-offer").checked,
             allowBarter: document.getElementById("sell-allow-barter").checked,
@@ -2462,6 +2708,7 @@
           e.target.reset();
           closeModal("modal-sell");
           switchView("catalog");
+          setSavedFilterState(false);
           syncRadiusUI(Math.max(uiState.maxRadius, Math.ceil(newItem.distanceKm)));
           showToast("Lungsuran Berhasil Tayang!", "\"" + title + "\" sudah tampil di katalog sekitar.", "success");
         });
@@ -2519,6 +2766,7 @@
       // Jalankan Aplikasi
       initEventListeners();
       updateBadges();
+      renderSavedBadge();
       renderCatalog();
       renderHelpTickets();
     })();
